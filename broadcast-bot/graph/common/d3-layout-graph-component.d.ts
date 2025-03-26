@@ -1,0 +1,44 @@
+import { HasGraphItemKey, LayoutGraph, LayoutGraphMeta } from './layout-graph-definition';
+import { GraphItem } from './graph-definition';
+import { ApplyChangesOptions, Config, D3DatumRendererFactory, Layer, LayerConfig, Viewport } from './d3-layout-graph-component-definitions';
+
+export declare class D3LayoutGraphComponent<Meta extends LayoutGraphMeta> {
+    private readonly _graph;
+    private readonly _container;
+    private readonly _svg;
+    private readonly _contentLayer;
+    private readonly _aboveContentLayers;
+    private readonly _svgResourceManager;
+    private readonly _previousNodeRendererHolder;
+    private readonly _previousEdgeRendererHolder;
+    private readonly _previousLabelRendererHolder;
+    private readonly _previousPortRendererHolder;
+    private readonly _zoomBehavior;
+    private readonly _selectionBehavior;
+    private readonly _installedRenderers;
+    private _nodeRendererFactory;
+    private _edgeRendererFactory;
+    private _labelRendererFactory;
+    private _portRendererFactory;
+    private _deferredSelection;
+    private _deferredViewport;
+    private _graphInvalidated;
+    private _updateScheduled;
+    constructor(_graph: LayoutGraph<Meta>, _container: HTMLElement, config?: Config<Meta>);
+    private installRenderer;
+    set nodeRendererFactory(factory: D3DatumRendererFactory<Meta, Meta['node']>);
+    set edgeRendererFactory(factory: D3DatumRendererFactory<Meta, Meta['edge']>);
+    set portRendererFactory(factory: D3DatumRendererFactory<Meta, Meta['port']>);
+    set labelRendererFactory(factory: D3DatumRendererFactory<Meta, Meta['label']>);
+    createPlainLayerAboveContent<Datum extends HasGraphItemKey>(config: LayerConfig<Meta, Datum>): Layer<Datum>;
+    invalidateGraph(): void;
+    set selection(value: GraphItem<Meta>[]);
+    set viewport(viewport: Viewport);
+    private scheduleInternalApplyChanges;
+    applyChanges({ animationDuration }: ApplyChangesOptions): Promise<void>;
+    private applyChangesInternal;
+    private createContext;
+    private redrawItems;
+    private redrawNodes;
+    private redrawEdges;
+}
