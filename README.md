@@ -46,17 +46,6 @@ or
 const classView = document.getElementById('cv');
 ```
 
-## Available Scripts
-
-The project provides several npm scripts for development, building, and testing:
-
-| Script | Description |
-|--------|-------------|
-| `build` | Builds both the distributable library and the showcase |
-| `build:dist` | Builds the distributable library for publishing |
-| `build:showcase` | Builds the Storybook showcase for demonstration |
-| `development:local-server` | Starts a local Storybook development server on port 6006 |
-
 ## Working with API
 
 Once Class View is initialized you can access its _properties_ (e.g. `classView.selectedObjects`), call _methods_ (e.g. `classView.navigateTo(objects)`) and subscribe to its _events_.
@@ -74,21 +63,103 @@ Content to render can be set using the `content` property:
 const content = {
   classes: [
     {
-      key: 'class1',
-      name: 'Class1',
+      key: 'Pet',
+      name: 'Pet',
       properties: [
         {
-          key: 'class1[prop]',
+          key: 'Pet[id]',
           kind: 'property',
-          name: 'property',
-          propertyType: 'String',
+          name: 'id',
+          propertyType: 'integer<int64>'
+        },
+        {
+          key: 'Pet[name]',
+          kind: 'property',
+          name: 'name',
+          propertyType: 'string',
+          required: true
+        },
+        {
+          key: 'Pet[category]',
+          kind: 'property',
+          name: 'category',
+          propertyType: 'Category'
+        },
+        {
+          key: 'Pet[photoUrls]',
+          kind: 'property',
+          name: 'photoUrls',
+          propertyType: 'string[]',
+          required: true
+        },
+        {
+          key: 'Pet[tags]',
+          kind: 'property',
+          name: 'tags',
+          propertyType: 'Tag[]'
+        },
+        {
+          key: 'Pet[status]',
+          kind: 'property',
+          name: 'status',
+          propertyType: 'string'
+        }
+      ]
+    },
+    {
+      key: 'Category',
+      name: 'Category',
+      properties: [
+        {
+          key: 'Category[id]',
+          kind: 'property',
+          name: 'id',
+          propertyType: 'integer<int64>'
+        },
+        {
+          key: 'Category[name]',
+          kind: 'property',
+          name: 'name',
+          propertyType: 'string'
+        }
+      ]
+    },
+    {
+      key: 'Tag',
+      name: 'Tag',
+      properties: [
+        {
+          key: 'Tag[id]',
+          kind: 'property',
+          name: 'id',
+          propertyType: 'integer<int64>'
+        },
+        {
+          key: 'Tag[name]',
+          kind: 'property',
+          name: 'name',
+          propertyType: 'string'
         }
       ]
     }
   ],
-  relations: []
+  relations: [
+    {
+      key: 'Pet-Category',
+      kind: 'property-to-class-reference',
+      leafPropertyKey: 'Pet[category]',
+      referenceClassKey: 'Category'
+    },
+    {
+      key: 'Pet-Tags',
+      kind: 'property-to-class-reference',
+      leafPropertyKey: 'Pet[tags]',
+      referenceClassKey: 'Tag'
+    }
+  ]
 };
 
+// Set content to class view
 classView.content = content;
 ```
 
@@ -100,13 +171,13 @@ Class View provides the following events:
 
 | Event Name | Description |
 |------------|-------------|
-| `objects-select` | Fired when selection changes |
-| `layout-start` | Fired when layout calculation begins |
-| `layout-finish` | Fired when layout calculation ends |
-| `update-start` | Fired when content update begins |
-| `update-finish` | Fired when content update completes |
-| `zoom-change` | Fired when zoom level changes |
-| `viewport-center-change` | Fired when viewport center changes |
+| `objects-select` | Selection changes |
+| `layout-start` | Layout calculation begins |
+| `layout-finish` | Layout calculation ends |
+| `update-start` | Content update begins |
+| `update-finish` | Content update completes |
+| `zoom-change` | Zoom level changes |
+| `viewport-center-change` | Viewport center changes |
 
 Example:
 
@@ -209,6 +280,8 @@ classView.navigateTo([myClass], {
   insets: { top: 20, right: 20, bottom: 20, left: 20 }
 });
 ```
+
+The `insets` parameter (with `top`, `right`, `bottom`, and `left` properties in pixels) defines padding between the viewport edges and the content being navigated to. This ensures that objects are not positioned directly at the edge of the view but have some space around them.
 
 ### Handling Selection Changes
 
@@ -331,6 +404,60 @@ setInterval(() => {
 }, 3000);
 ```
 
+### Extended Example with Relationships
+
+```javascript
+// Create class objects
+const classA = {
+  key: 'classA',
+  name: 'Class A',
+  properties: [
+    {
+      key: 'propA1',
+      kind: 'property',
+      name: 'propA1',
+      propertyType: 'string'
+    },
+    {
+      key: 'propA2',
+      kind: 'property',
+      name: 'propA2',
+      propertyType: 'ClassB'
+    }
+  ]
+};
+
+const classB = {
+  key: 'classB',
+  name: 'Class B',
+  properties: [
+    {
+      key: 'propB1',
+      kind: 'property',
+      name: 'propB1',
+      propertyType: 'number'
+    }
+  ]
+};
+
+// Create relationship between Class A's property and Class B
+const relationship = {
+  key: 'rel-A-B',
+  kind: 'property-to-class-reference',
+  leafPropertyKey: 'propA2',
+  referenceClassKey: 'classB'
+};
+
+// Set the content with classes and relationship
+classView.content = {
+  classes: [classA, classB],
+  relations: [relationship]
+};
+
+// Navigate to all objects
+classView.navigateTo([classA, classB]);
+```
+
 ### React Integration
 
 Here's how to integrate Class View within a React component:
@@ -419,58 +546,19 @@ function ClassDiagram({ data, onSelectionChange }) {
 export default ClassDiagram;
 ```
 
-### Extended Example with Relationships
+For more examples, check out the [Storybook](https://netcracker.github.io/qubership-apihub-class-view/main/).
 
-```javascript
-// Create class objects
-const classA = {
-  key: 'classA',
-  name: 'Class A',
-  properties: [
-    {
-      key: 'propA1',
-      kind: 'property',
-      name: 'propA1',
-      propertyType: 'string'
-    },
-    {
-      key: 'propA2',
-      kind: 'property',
-      name: 'propA2',
-      propertyType: 'ClassB'
-    }
-  ]
-};
+## Available Scripts
 
-const classB = {
-  key: 'classB',
-  name: 'Class B',
-  properties: [
-    {
-      key: 'propB1',
-      kind: 'property',
-      name: 'propB1',
-      propertyType: 'number'
-    }
-  ]
-};
+The project provides several npm scripts for development, building, and testing:
 
-// Create relationship between Class A's property and Class B
-const relationship = {
-  key: 'rel-A-B',
-  kind: 'property-to-class-reference',
-  leafPropertyKey: 'propA2',
-  referenceClassKey: 'classB'
-};
+| Script | Description |
+|--------|-------------|
+| `build` | Builds both the distributable library and the showcase |
+| `build:dist` | Builds the distributable library for publishing |
+| `build:showcase` | Builds the Storybook showcase for demonstration |
+| `development:local-server` | Starts a local Storybook development server on port 6006 |
 
-// Set the content with classes and relationship
-classView.content = {
-  classes: [classA, classB],
-  relations: [relationship]
-};
+## Contributing
 
-// Navigate to all objects
-classView.navigateTo([classA, classB]);
-```
-
-Check out more examples by running the Storybook.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests to us.
