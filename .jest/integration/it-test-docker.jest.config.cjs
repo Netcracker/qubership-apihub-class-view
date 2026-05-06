@@ -14,13 +14,15 @@
  * limitations under the License.
  */
 
-const ourConfig = require('./puppeteer.config.cjs')
-const libConfig = require('./docker/config.cjs')()
-const customConfig = Object.assign({}, libConfig)
+const path = require('path')
+const { prepareJestConfig } = require('@netcracker/qubership-apihub-jest-chrome-in-docker-environment')
 
-customConfig.connect.defaultViewport = {
-  width: 1800,
-  height: 1000
-}
-customConfig.chromiumFlags = ourConfig.launch.args.filter(arg => !arg.startsWith('--window-size'))
-module.exports = customConfig
+process.env.HOST_CHECK_PORT = '6006'
+
+module.exports = prepareJestConfig(
+  path.resolve(__dirname, './common-it-test.jest.config.cjs'),
+  path.resolve(__dirname, './common-puppeteer.config.cjs'),
+  {
+    dockerImage: 'ghcr.io/netcracker/qubership-apihub-nodejs-dev-image:feature-nodejs24',
+  },
+)

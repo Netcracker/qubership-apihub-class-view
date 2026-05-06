@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-const path = require('path')
-
 module.exports = {
-  globalSetup: path.join(__dirname, 'setup.cjs'),
-  globalTeardown: path.join(__dirname, 'teardown.cjs'),
-  testEnvironment: 'jest-environment-puppeteer'
+  headless: true,
+  devtools: false,
+  args: [
+    '--window-size=1800,1000',
+  ],
 }

@@ -16,11 +16,13 @@
 
 import { ElementHandle } from 'puppeteer'
 
-export async function captureScreenshot(domElement: ElementHandle): Promise<Buffer | string> {
-  return domElement.screenshot({ encoding: 'binary', type: 'png', captureBeyondViewport: false })
+export async function captureScreenshot(domElement: ElementHandle): Promise<Buffer> {
+  const screenshot = await domElement.screenshot({ encoding: 'binary', type: 'png', captureBeyondViewport: false })
+  return Buffer.from(screenshot)
 }
 
 export function host(): string {
-  return process.env.RUN_IN_DOCKER === 'true' ? 'http://host.docker.internal:6006' : 'http://localhost:6006'
+  const address = process.env.RUN_IN_DOCKER === 'true' ? (process.env.HOST_ADDRESS || 'localhost') : 'localhost'
+  return `http://${address}:6006`
 }
 

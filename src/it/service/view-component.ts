@@ -15,7 +15,7 @@
  */
 
 export interface ViewComponent {
-  captureScreenshot(): Promise<Buffer | string>;
+  captureScreenshot(): Promise<Buffer>;
 
   prepareToNextRenderFinish(): Promise<void>;
 
