@@ -44,8 +44,9 @@ export async function storyPage(page: Page, storyName: string): Promise<StoryPag
   await page.goto(`${host()}?path=/story/${storyName}&it=true`, { waitUntil: 'networkidle2', timeout: 0 })
   await page.waitForSelector('#storybook-panel-root', { timeout: 0 })
   const storyFrame = await waitStoryFrame(page)
-  // Puppeteer 24: exposeFunction is main-frame only, so we set up the
-  // render signal listener directly in the storyFrame after finding it.
+  // page.exposeFunction() uses CDP Runtime.addBinding which only affects the main frame's
+  // target — it doesn't propagate to Storybook's cross-origin preview iframe (OOPIF).
+  // So we relay the render signal via console.log instead.
   await storyFrame.evaluate((eventName, signal) => {
     document.addEventListener(eventName, () => console.log(signal))
   }, REPUB_EVENT_UPDATE_FINISH, RENDER_SIGNAL)
