@@ -16,9 +16,8 @@
 
 import { ElementHandle } from 'puppeteer'
 
-export async function captureScreenshot(domElement: ElementHandle): Promise<Buffer> {
-  const screenshot = await domElement.screenshot({ encoding: 'binary', type: 'png', captureBeyondViewport: false })
-  return Buffer.from(screenshot)
+export async function captureScreenshot(domElement: ElementHandle): Promise<Uint8Array> {
+  return domElement.screenshot({ encoding: 'binary', type: 'png', captureBeyondViewport: false })
 }
 
 export function host(): string {
