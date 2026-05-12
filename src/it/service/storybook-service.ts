@@ -29,6 +29,10 @@ const RENDER_SIGNAL = '__CLASS_VIEW_UPDATE_FINISH__'
 export async function storyPage(page: Page, storyName: string): Promise<StoryPage> {
   enableConsoleLogs(page, false)
   const renderEventTarget: EventEmitter = new EventEmitter()
+  // Bridge browser→Node.js: the iframe emits a DOM event on render finish,
+  // which we relay via console.log (see storyFrame.evaluate below) because
+  // page.exposeFunction can't reach the OOPIF. This listener converts it
+  // back into a Node.js EventEmitter event that tests await.
   page.on('console', msg => {
     if (msg.text() === RENDER_SIGNAL) {
       renderEventTarget.emit(EVENT_NAME_UPDATE_FINISH)
@@ -44,9 +48,7 @@ export async function storyPage(page: Page, storyName: string): Promise<StoryPag
   await page.goto(`${host()}?path=/story/${storyName}&it=true`, { waitUntil: 'networkidle2', timeout: 0 })
   await page.waitForSelector('#storybook-panel-root', { timeout: 0 })
   const storyFrame = await waitStoryFrame(page)
-  // page.exposeFunction() uses CDP Runtime.addBinding which only affects the main frame's
-  // target — it doesn't propagate to Storybook's cross-origin preview iframe (OOPIF).
-  // So we relay the render signal via console.log instead.
+  // Emit render-finish DOM event as console.log so the bridge above can catch it.
   await storyFrame.evaluate((eventName, signal) => {
     document.addEventListener(eventName, () => console.log(signal))
   }, REPUB_EVENT_UPDATE_FINISH, RENDER_SIGNAL)
