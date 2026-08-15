@@ -14,6 +14,11 @@
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": false,
     "resolveJsonModule": true,
+    "types": [
+      "node",
+      "jest",
+      "jest-image-snapshot"
+    ],
     "isolatedModules": true,
     "noEmit": true,
     /* Linting */
