@@ -53,7 +53,7 @@
     "@netcracker/qubership-apihub-npm-gitflow": "3.1.1",
     "@types/d3": "^7.4.3",
     "@types/fontfaceobserver": "^2.1.2",
-    "@netcracker/qubership-apihub-jest-chrome-in-docker-environment": "2.0.1",
+    "@netcracker/qubership-apihub-jest-chrome-in-docker-environment": "bugfix-update-infrastructure",
     "@types/jest": "30.0.0",
     "@types/jest-image-snapshot": "6.1.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
