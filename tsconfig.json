@@ -14,6 +14,7 @@
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": false,
     "resolveJsonModule": true,
+    "rootDir": "./src/main",
     "types": [
       "node",
       "jest",
