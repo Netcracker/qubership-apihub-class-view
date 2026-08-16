@@ -74,5 +74,9 @@
     "typescript": "6.0.3",
     "vite": "^4.4.5",
     "vite-plugin-dts": "^3.6.3"
+  },
+  "overrides": {
+    "jest-environment-node": "30.4.1",
+    "jest-mock": "30.4.1"
   }
 }
