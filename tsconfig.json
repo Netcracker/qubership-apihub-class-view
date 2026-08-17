@@ -42,6 +42,18 @@
   "include": [
     "src"
   ],
+  /* src/it holds the puppeteer screenshot suites and src/stories the Storybook
+     stories. Neither is published - only src/main is - and both sit outside the
+     rootDir the published declaration layout requires, so a bare `tsc` reports
+     TS6059 for every file in them. They are compiled by
+     .jest/integration/tsconfig.it-test.json, which sets its own include, and they sit
+     outside the rootDir that the published declaration layout requires - so a bare
+     `tsc` over them reports TS6059 for every file. Excluded here; still type-checked
+     when the screenshot suite runs. */
+  "exclude": [
+    "src/it",
+    "src/stories"
+  ],
   "references": [
     {
       "path": "./tsconfig.node.json"
