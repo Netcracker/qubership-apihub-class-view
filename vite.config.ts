@@ -21,13 +21,6 @@ import dts from 'vite-plugin-dts'
 // https://vitejs.dev/config/
 export default defineConfig(() => {
   return {
-    resolve: {
-      alias: {
-        'assets': resolve(__dirname, './src/assets'),
-        'main': resolve(__dirname, './src/main'),
-        'stories': resolve(__dirname, './src/stories'),
-      },
-    },
     build: {
       lib: {
         entry: resolve(__dirname, './src/main/index.ts'),
