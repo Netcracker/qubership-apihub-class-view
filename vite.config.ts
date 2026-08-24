@@ -38,6 +38,10 @@ export default defineConfig(() => {
     },
     plugins: [dts({
       include: './src/main/**',
+      // The compiler rootDir is the package root so that src/it and src/stories are
+      // inside it; entryRoot keeps the emitted declarations flat under dist/, which is
+      // where the published `types` entry points.
+      entryRoot: './src/main',
     })],
   }
 })

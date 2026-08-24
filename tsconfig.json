@@ -14,7 +14,11 @@
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": false,
     "resolveJsonModule": true,
-    "rootDir": "./src/main",
+    /* The package root, not ./src/main. Narrower values put src/it and src/stories
+       outside the rootDir and produce TS6059 for every file in them, which is why they
+       used to be excluded. The published declaration layout is preserved by
+       vite-plugin-dts's entryRoot instead - see vite.config.ts. */
+    "rootDir": "./",
     "types": [
       "node",
       "jest",
@@ -41,18 +45,6 @@
   },
   "include": [
     "src"
-  ],
-  /* src/it holds the puppeteer screenshot suites and src/stories the Storybook
-     stories. Neither is published - only src/main is - and both sit outside the
-     rootDir the published declaration layout requires, so a bare `tsc` reports
-     TS6059 for every file in them. They are compiled by
-     .jest/integration/tsconfig.it-test.json, which sets its own include, and they sit
-     outside the rootDir that the published declaration layout requires - so a bare
-     `tsc` over them reports TS6059 for every file. Excluded here; still type-checked
-     when the screenshot suite runs. */
-  "exclude": [
-    "src/it",
-    "src/stories"
   ],
   "references": [
     {
