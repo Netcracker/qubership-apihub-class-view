@@ -15,7 +15,7 @@
  */
 
 import { Meta } from '@storybook/html'
-import { generateContent, Template } from 'stories/common'
+import { generateContent, Template } from '../common'
 
 export default {
   title: 'Synthetic/Content',

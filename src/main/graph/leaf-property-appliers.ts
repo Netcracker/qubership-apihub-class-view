@@ -14,25 +14,25 @@
  * limitations under the License.
  */
 
-import { LeafPropertyView, ViewMeta } from 'main/graph/view-definition'
-import { DIRTY_STATE_LAYOUT, DIRTY_STATE_VISUAL } from 'main/graph/common/dirty-state'
-import { DirtyStateModificationAppliersFactory } from 'main/graph/appliers-common'
-import { equalsLeafPropertyByLayout, equalsLeafPropertyByVisual } from 'main/domain/like/leaf-property'
+import { LeafPropertyView, ViewMeta } from './view-definition'
+import { DIRTY_STATE_LAYOUT, DIRTY_STATE_VISUAL } from './common/dirty-state'
+import { DirtyStateModificationAppliersFactory } from './appliers-common'
+import { equalsLeafPropertyByLayout, equalsLeafPropertyByVisual } from '../domain/like/leaf-property'
 import {
   DEFAULT_CLASS_MARGIN_LEFT,
   DEFAULT_LEAF_PROPERTY_FONT_SIZE,
   DEFAULT_LEAF_PROPERTY_FONT_WEIGHT,
   DEFAULT_LEAF_PROPERTY_LINE_HEIGHT,
   DEFAULT_LEAF_PROPERTY_PORT_WIDTH,
-} from 'main/defaults'
+} from '../defaults'
 import {
   LabelViewModificationAppliers,
   LayoutGraph,
   LocatableLabel,
   LocatablePort,
   PortViewModificationAppliers,
-} from 'main/graph/common/layout-graph-definition'
-import { TextService } from 'main/graph/common/text-service'
+} from './common/layout-graph-definition'
+import { TextService } from './common/text-service'
 
 export const leafPropertyLabelDirtyStatusApplierFactory: DirtyStateModificationAppliersFactory<LeafPropertyView> = (update) => {
   return {

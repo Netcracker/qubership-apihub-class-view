@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import { Optional, OptionalMembers } from 'main/domain/base'
-import { DomainMeta } from 'main/domain/object/meta'
-import { NavigableObject, NavigateOptions } from 'main/component/class-view-api'
-import { isDefine } from 'main/core/utils'
-import { DEFAULT_CONTENT_INSETS } from 'main/defaults'
+import { Optional, OptionalMembers } from '../domain/base'
+import { DomainMeta } from '../domain/object/meta'
+import { NavigableObject, NavigateOptions } from './class-view-api'
+import { isDefine } from '../core/utils'
+import { DEFAULT_CONTENT_INSETS } from '../defaults'
 
 export interface DeferredOperations<
   Meta extends DomainMeta

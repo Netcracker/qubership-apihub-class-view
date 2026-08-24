@@ -23,7 +23,7 @@ import {
   Optional,
   PropertyObject,
   RelationObject,
-} from 'main/domain'
+} from '../../main/domain'
 import {
   CLASS_SUFFIX,
   generateClassObject,
@@ -32,10 +32,10 @@ import {
   LEAF_PROPERTY_SUFFIX,
   range,
   storyArgsFunc,
-} from 'stories/common'
+} from '../common'
 import { useArgs } from '@storybook/client-api'
-import { isDefine } from 'main/core/utils'
-import { DEFAULT_ANIMATION_DURATION } from 'main/defaults'
+import { isDefine } from '../../main/core/utils'
+import { DEFAULT_ANIMATION_DURATION } from '../../main/defaults'
 
 enum Action {
   NONE,

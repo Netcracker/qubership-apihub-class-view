@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-import { LIKE_TYPE_INCLUDE_PROPERTIES_GROUP_RELATION } from 'main/domain/like/type'
+import { LIKE_TYPE_INCLUDE_PROPERTIES_GROUP_RELATION } from './type'
 import {
   HasIdentityLike,
   HasPrimaryLike,
   HasReferenceFromGroupToClassLike,
   HasTypeLike,
-} from 'main/domain/like/base'
+} from './base'
 import { createCustomEqual } from 'fast-equals'
-import { equalsByIdentity, equalsByPrimary, equalsByReferenceFromGroupToClass } from 'main/domain/like/base-equals'
-import { IsEqualFunction } from 'main/domain/base'
+import { equalsByIdentity, equalsByPrimary, equalsByReferenceFromGroupToClass } from './base-equals'
+import { IsEqualFunction } from '../base'
 
 export interface IncludePropertiesGroupRelationLike extends HasIdentityLike, HasTypeLike<typeof LIKE_TYPE_INCLUDE_PROPERTIES_GROUP_RELATION>, HasPrimaryLike, HasReferenceFromGroupToClassLike {
 }

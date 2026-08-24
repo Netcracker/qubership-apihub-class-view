@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import { HasGraphItemKey, LayoutGraphMeta } from 'main/graph/common/layout-graph-definition'
-import { GraphItem } from 'main/graph/common/graph-definition'
-import { SvgResourceDefiner, SvgResourceReader } from 'main/graph/common/svg-resource-manager'
+import { HasGraphItemKey, LayoutGraphMeta } from './layout-graph-definition'
+import { GraphItem } from './graph-definition'
+import { SvgResourceDefiner, SvgResourceReader } from './svg-resource-manager'
 import { BaseType, Selection, Transition } from 'd3'
-import { Duration, Pixel, Point, Zoom } from 'main/domain'
+import { Duration, Pixel, Point, Zoom } from '../../domain'
 
 export interface RendererContext<Meta extends LayoutGraphMeta> {
 

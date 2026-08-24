@@ -16,7 +16,7 @@
 
 import './class-view-component.css'
 import { registerWebComponent } from './web-component-registration'
-import { DefaultDomainMeta, DomainMeta, PropertyObject } from 'main/domain/object/meta'
+import { DefaultDomainMeta, DomainMeta, PropertyObject } from '../domain/object/meta'
 import {
   ClassViewApi,
   EVENT_LAYOUT_FINISH,
@@ -31,21 +31,21 @@ import {
   RichHTMLElementEventMap,
   SelectableObject,
   SelectionChangeData,
-} from 'main/component/class-view-api'
-import { ContentObject } from 'main/domain/object/content'
-import { SimpleChangeableValue } from 'main/core/changeable-value'
-import { ConvertResult, LikeConverter, resolveLikes, resolveObjects } from 'main/like/like-converter'
-import { DeferredNavigate as LikeDeferredNavigate, GraphView } from 'main/graph/graph-view'
-import { DomainLike, SelectableLike } from 'main/domain/like/all'
-import { Duration, Optional, OptionalMembers, Pixel, Point, Zoom } from 'main/domain/base'
-import { DEFAULT_ANIMATION_DURATION, DEFAULT_VIEWPORT_CENTER, DEFAULT_ZOOM } from 'main/defaults'
-import { ClassObject } from 'main/domain/object/class'
+} from './class-view-api'
+import { ContentObject } from '../domain/object/content'
+import { SimpleChangeableValue } from '../core/changeable-value'
+import { ConvertResult, LikeConverter, resolveLikes, resolveObjects } from '../like/like-converter'
+import { DeferredNavigate as LikeDeferredNavigate, GraphView } from '../graph/graph-view'
+import { DomainLike, SelectableLike } from '../domain/like/all'
+import { Duration, Optional, OptionalMembers, Pixel, Point, Zoom } from '../domain/base'
+import { DEFAULT_ANIMATION_DURATION, DEFAULT_VIEWPORT_CENTER, DEFAULT_ZOOM } from '../defaults'
+import { ClassObject } from '../domain/object/class'
 import {
   DeferredNavigate as ObjectDeferredNavigate,
   DeferredOperationsManager,
-} from 'main/component/deferred-operation'
-import { isDefine } from 'main/core/utils'
-import { FontObserver } from 'main/component/font-observer'
+} from './deferred-operation'
+import { isDefine } from '../core/utils'
+import { FontObserver } from './font-observer'
 
 export class ClassViewComponent<Meta extends DomainMeta = DefaultDomainMeta> extends window.HTMLElement implements ClassViewApi<Meta> {
 
@@ -167,7 +167,7 @@ export class ClassViewComponent<Meta extends DomainMeta = DefaultDomainMeta> ext
 
   private async createGraphView(): Promise<GraphView> {
     await new FontObserver(this).load()
-    const { GraphView } = await import('main/graph/graph-view')
+    const { GraphView } = await import('../graph/graph-view')
     const graphView = new GraphView(
       this,
       {

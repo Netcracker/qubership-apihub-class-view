@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { FontWeight, OneLineText, Optional, Pixel } from 'main/domain/base'
+import { FontWeight, OneLineText, Optional, Pixel } from '../domain/base'
 
 const SVG_NAMESPACE_URI = 'http://www.w3.org/2000/svg'
 const XML_NAMESPACE_URI = 'http://www.w3.org/XML/1998/namespace'

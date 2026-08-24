@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { EdgePath, LocatableEdge } from 'main/graph/common/layout-graph-definition'
+import { EdgePath, LocatableEdge } from './common/layout-graph-definition'
 import {
   IncludePropertiesGroupRelationView,
   PropertyToClassRelationView,
@@ -22,7 +22,7 @@ import {
   VIEW_TYPE_PROPERTY_TO_CLASS_RELATION,
   ViewMeta,
   VirtualRelation,
-} from 'main/graph/view-definition'
+} from './view-definition'
 import {
   DEFAULT_EDGE_SMOOTH_RADIUS,
   DEFAULT_INCLUDE_PROPERTIES_GROUP_RELATION_SELECTION_STROKE_COLOR,
@@ -33,20 +33,20 @@ import {
   DEFAULT_PROPERTY_TO_CLASS_RELATION_SELECTION_STROKE_WIDTH,
   DEFAULT_PROPERTY_TO_CLASS_RELATION_STROKE_COLOR,
   DEFAULT_PROPERTY_TO_CLASS_RELATION_STROKE_WIDTH,
-} from 'main/defaults'
-import { toSvgPathArray } from 'main/graph/common/d3-layout-graph-default-stlyes'
-import { SvgResourceDefiner } from 'main/graph/common/svg-resource-manager'
-import arrowIcon from 'assets/link-end.svg?raw'
-import { Color, Pixel } from 'main/domain'
+} from '../defaults'
+import { toSvgPathArray } from './common/d3-layout-graph-default-stlyes'
+import { SvgResourceDefiner } from './common/svg-resource-manager'
+import arrowIcon from '../../assets/link-end.svg?raw'
+import { Color, Pixel } from '../domain'
 import {
   D3DatumRenderer,
   D3DatumRendererFactory,
   RendererContext,
-} from 'main/graph/common/d3-layout-graph-component-definitions'
+} from './common/d3-layout-graph-component-definitions'
 import {
   LIKE_TYPE_INCLUDE_PROPERTIES_GROUP_RELATION,
   LIKE_TYPE_PROPERTY_TO_CLASS_RELATION,
-} from 'main/domain/like/type'
+} from '../domain/like/type'
 
 const ICON_ARROW_END = 'arrow-end'
 const ICON_ARROW_END_SELECTED = 'arrow-end-selected'

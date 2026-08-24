@@ -24,7 +24,7 @@ import {
   PROPERTIES_GROUP_SUFFIX,
   range,
   Template
-} from 'stories/common'
+} from '../common'
 
 export default {
   title: 'Synthetic/Content',

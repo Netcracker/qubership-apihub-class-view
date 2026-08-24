@@ -15,8 +15,8 @@
  */
 
 import { Meta, StoryFn } from '@storybook/html'
-import { ContentObject } from 'main/domain'
-import { generateClassObject, storyArgsFunc } from 'stories/common'
+import { ContentObject } from '../../main/domain'
+import { generateClassObject, storyArgsFunc } from '../common'
 
 export default {
   title: 'Synthetic/Embed',

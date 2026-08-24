@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import { HasDeprecationLike, HasIdentityLike, HasNameLike, HasPropertiesLike, HasTypeLike } from 'main/domain/like/base'
-import { LIKE_TYPE_PROPERTY_GROUP } from 'main/domain/like/type'
+import { HasDeprecationLike, HasIdentityLike, HasNameLike, HasPropertiesLike, HasTypeLike } from './base'
+import { LIKE_TYPE_PROPERTY_GROUP } from './type'
 import { createCustomEqual } from 'fast-equals'
-import { equalsByDeprecation, equalsByIdentity, equalsByName } from 'main/domain/like/base-equals'
-import { LeafPropertyLike } from 'main/domain/like/leaf-property'
-import { IsEqualFunction } from 'main/domain/base'
+import { equalsByDeprecation, equalsByIdentity, equalsByName } from './base-equals'
+import { LeafPropertyLike } from './leaf-property'
+import { IsEqualFunction } from '../base'
 
 export interface PropertiesGroupLike extends HasIdentityLike, HasTypeLike<typeof LIKE_TYPE_PROPERTY_GROUP>, HasNameLike, HasDeprecationLike, HasPropertiesLike<LeafPropertyLike> {
 }

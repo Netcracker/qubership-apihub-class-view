@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import { Key, OneLineText, Optional } from 'main/domain/base'
-import { LikeType } from 'main/domain/like/type'
-import { ClassLike } from 'main/domain/like/class'
-import { LeafPropertyLike } from 'main/domain/like/leaf-property'
-import { PropertiesGroupLike } from 'main/domain/like/properties-group'
-import { Shape } from 'main/domain'
+import { Key, OneLineText, Optional } from '../base'
+import { LikeType } from './type'
+import { ClassLike } from './class'
+import { LeafPropertyLike } from './leaf-property'
+import { PropertiesGroupLike } from './properties-group'
+import { Shape } from '..'
 
 export interface HasIdentityLike {
   readonly key: Key;

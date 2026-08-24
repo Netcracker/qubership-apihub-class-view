@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { Color, Optional } from 'main/domain/base'
-import { isDefine } from 'main/core/utils'
+import { Color, Optional } from '../domain/base'
+import { isDefine } from './utils'
 
 export function valueOrDefaultForGeneric<T>(value: Optional<T>, defaultValue: () => T): T {
   return isDefine(value) ? value : defaultValue()

@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-import { ContentObject } from 'main/domain/object/content'
-import { ContentLike } from 'main/domain/like/content'
-import { Key, Optional } from 'main/domain/base'
-import { DomainLike, RelationLike } from 'main/domain/like/all'
-import { DomainMeta, PropertyObject, RelationObject } from 'main/domain/object/meta'
-import { DomainObject } from 'main/component/class-view-api'
-import { ClassObject } from 'main/domain/object/class'
-import { LeafPropertyObject } from 'main/domain/object/leaf-property'
-import { LeafPropertyLike } from 'main/domain/like/leaf-property'
-import { ClassLike } from 'main/domain/like/class'
+import { ContentObject } from '../domain/object/content'
+import { ContentLike } from '../domain/like/content'
+import { Key, Optional } from '../domain/base'
+import { DomainLike, RelationLike } from '../domain/like/all'
+import { DomainMeta, PropertyObject, RelationObject } from '../domain/object/meta'
+import { DomainObject } from '../component/class-view-api'
+import { ClassObject } from '../domain/object/class'
+import { LeafPropertyObject } from '../domain/object/leaf-property'
+import { LeafPropertyLike } from '../domain/like/leaf-property'
+import { ClassLike } from '../domain/like/class'
 import {
   LIKE_TYPE_CLASS,
   LIKE_TYPE_INCLUDE_PROPERTIES_GROUP_RELATION,
   LIKE_TYPE_LEAF_PROPERTY,
   LIKE_TYPE_PROPERTY_GROUP,
   LIKE_TYPE_PROPERTY_TO_CLASS_RELATION,
-} from 'main/domain/like/type'
-import { isDefine } from 'main/core/utils'
+} from '../domain/like/type'
+import { isDefine } from '../core/utils'
 import {
   HasIdentity,
   HasPropertyKind,
@@ -40,13 +40,13 @@ import {
   PROPERTY_TYPE_LEAF,
   RELATION_TYPE_INCLUDE_PROPERTIES_GROUP,
   RELATION_TYPE_PROPERTY_TO_CLASS_REFERENCE,
-} from 'main/domain/object/base'
-import { PropertiesGroupObject } from 'main/domain/object/properties-group'
-import { IncludePropertiesGroupRelationObject } from 'main/domain/object/include-properties-group-relation'
-import { PropertyToClassRelationObject } from 'main/domain/object/property-to-class-reference-relation'
-import { PropertiesGroupLike } from 'main/domain/like/properties-group'
-import { IncludePropertiesGroupRelationLike } from 'main/domain/like/include-properties-group-relation'
-import { PropertyToClassRelationLike } from 'main/domain/like/property-to-class-reference-relation'
+} from '../domain/object/base'
+import { PropertiesGroupObject } from '../domain/object/properties-group'
+import { IncludePropertiesGroupRelationObject } from '../domain/object/include-properties-group-relation'
+import { PropertyToClassRelationObject } from '../domain/object/property-to-class-reference-relation'
+import { PropertiesGroupLike } from '../domain/like/properties-group'
+import { IncludePropertiesGroupRelationLike } from '../domain/like/include-properties-group-relation'
+import { PropertyToClassRelationLike } from '../domain/like/property-to-class-reference-relation'
 import {
   DEFAULT_CLASS_DEPRECATION,
   DEFAULT_CLASS_NAME,
@@ -59,7 +59,7 @@ import {
   DEFAULT_PROPERTIES_GROUP_DEPRECATION,
   DEFAULT_PROPERTIES_GROUP_NAME,
   DEFAULT_PROPERTY_TO_CLASS_RELATION_PRIMARY,
-} from 'main/defaults'
+} from '../defaults'
 
 type PartlyMutable<T, K extends keyof T> = Pick<T, K> & Partial<Omit<T, K>>;
 type OriginalToRemove = { original?: unknown }

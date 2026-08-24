@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { SelectableLike } from 'main/domain/like/all'
-import { Pixel, Point, Zoom } from 'main/domain/base'
+import { SelectableLike } from '../domain/like/all'
+import { Pixel, Point, Zoom } from '../domain/base'
 
 export interface ViewCallback {
   layoutStart(): void;

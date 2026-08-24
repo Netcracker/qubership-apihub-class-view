@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import { ClassLike } from 'main/domain/like/class'
-import { LeafPropertyLike } from 'main/domain/like/leaf-property'
-import { IncludePropertiesGroupRelationLike } from 'main/domain/like/include-properties-group-relation'
-import { PropertyToClassRelationLike } from 'main/domain/like/property-to-class-reference-relation'
-import { PropertiesGroupLike } from 'main/domain/like/properties-group'
+import { ClassLike } from './class'
+import { LeafPropertyLike } from './leaf-property'
+import { IncludePropertiesGroupRelationLike } from './include-properties-group-relation'
+import { PropertyToClassRelationLike } from './property-to-class-reference-relation'
+import { PropertiesGroupLike } from './properties-group'
 
 export type DomainLike = ClassLike | PropertyLike | RelationLike
 export type SelectableLike = DomainLike;

@@ -15,7 +15,7 @@
  */
 
 import { Meta, StoryFn } from '@storybook/html'
-import { ContentObject } from 'main/domain'
+import { ContentObject } from '../../main/domain'
 import {
   CLASS_SUFFIX,
   generateClassObject,
@@ -27,7 +27,7 @@ import {
   PROPERTIES_GROUP_SUFFIX,
   range,
   storyArgsFunc
-} from 'stories/common'
+} from '../common'
 
 export default {
   title: 'Synthetic/Topology',

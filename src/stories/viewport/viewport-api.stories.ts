@@ -25,10 +25,10 @@ import {
   PropertiesGroupObject,
   PropertyObject,
   Zoom
-} from 'main/domain'
-import { generateClassObject, generateContent, generatePropertiesGroupObject, storyArgsFunc } from 'stories/common'
-import { ClassViewComponent, EVENT_VIEWPORT_CENTER_CHANGE, EVENT_ZOOM_CHANGE } from 'main/component'
-import { isDefine } from 'main/core/utils'
+} from '../../main/domain'
+import { generateClassObject, generateContent, generatePropertiesGroupObject, storyArgsFunc } from '../common'
+import { ClassViewComponent, EVENT_VIEWPORT_CENTER_CHANGE, EVENT_ZOOM_CHANGE } from '../../main/component'
+import { isDefine } from '../../main/core/utils'
 import { useArgs } from '@storybook/client-api'
 
 const ROUNDING = 4

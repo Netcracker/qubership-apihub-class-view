@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { OneLineText, Pixel, Point, Size } from 'main/domain/base'
-import { GraphMeta, IGraph, ModificationAppliers } from 'main/graph/common/graph-definition'
+import { OneLineText, Pixel, Point, Size } from '../../domain/base'
+import { GraphMeta, IGraph, ModificationAppliers } from './graph-definition'
 
 export type GraphItemKey = string
 

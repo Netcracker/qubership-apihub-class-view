@@ -22,7 +22,7 @@ import {
   HasPropertyTypeLike,
   HasRequiredLike,
   HasTypeLike,
-} from 'main/domain/like/base'
+} from './base'
 import { createCustomEqual } from 'fast-equals'
 import {
   equalsByDeprecation,
@@ -31,9 +31,9 @@ import {
   equalsByPropertyType,
   equalsByPropertyTypeDeprecation,
   equalsByRequired,
-} from 'main/domain/like/base-equals'
-import { LIKE_TYPE_LEAF_PROPERTY } from 'main/domain/like/type'
-import { IsEqualFunction } from 'main/domain/base'
+} from './base-equals'
+import { LIKE_TYPE_LEAF_PROPERTY } from './type'
+import { IsEqualFunction } from '../base'
 
 export interface LeafPropertyLike extends HasIdentityLike, HasNameLike, HasTypeLike<typeof LIKE_TYPE_LEAF_PROPERTY>, HasRequiredLike, HasDeprecationLike, HasPropertyTypeDeprecationLike, HasPropertyTypeLike {
 }

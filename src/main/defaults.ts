@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { Color, Duration, FontWeight, Insets, OneLineText, Pixel, Point } from 'main/domain/base'
-import { Shape, SHAPE_ROUND_RECTANGLE } from 'main/domain'
+import { Color, Duration, FontWeight, Insets, OneLineText, Pixel, Point } from './domain/base'
+import { Shape, SHAPE_ROUND_RECTANGLE } from './domain'
 
 export const DEFAULT_ZOOM = 1
 export const DEFAULT_VIEWPORT_CENTER: Point<Pixel> = { x: 0, y: 0 }

@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-import { DomainMeta, PropertyObject } from 'main/domain/object/meta'
-import { ClassObject } from 'main/domain/object/class'
+import { DomainMeta, PropertyObject } from '../domain/object/meta'
+import { ClassObject } from '../domain/object/class'
 import {
   OBJECT_TYPE_CLASS,
   OBJECT_TYPE_INCLUDE_PROPERTIES_GROUP,
   OBJECT_TYPE_LEAF_PROPERTY,
   OBJECT_TYPE_PROPERTIES_GROUP,
   OBJECT_TYPE_PROPERTY_TO_CLASS_REFERENCE,
-} from 'main/domain/object/type'
-import { LeafPropertyObject } from 'main/domain/object/leaf-property'
-import { PropertiesGroupObject } from 'main/domain/object/properties-group'
-import { IncludePropertiesGroupRelationObject } from 'main/domain/object/include-properties-group-relation'
-import { PropertyToClassRelationObject } from 'main/domain/object/property-to-class-reference-relation'
+} from '../domain/object/type'
+import { LeafPropertyObject } from '../domain/object/leaf-property'
+import { PropertiesGroupObject } from '../domain/object/properties-group'
+import { IncludePropertiesGroupRelationObject } from '../domain/object/include-properties-group-relation'
+import { PropertyToClassRelationObject } from '../domain/object/property-to-class-reference-relation'
 
 const CUSTOMIZATION_FUNCTION_SUFFIX = 'Function'
 

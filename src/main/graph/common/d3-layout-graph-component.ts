@@ -33,17 +33,17 @@ import {
   DEFAULT_LABEL_RENDERER,
   DEFAULT_NODE_RENDERER,
   DEFAULT_PORT_RENDERER,
-} from 'main/graph/common/d3-layout-graph-default-stlyes'
-import { HasGraphItemKey, LayoutGraph, LayoutGraphMeta } from 'main/graph/common/layout-graph-definition'
+} from './d3-layout-graph-default-stlyes'
+import { HasGraphItemKey, LayoutGraph, LayoutGraphMeta } from './layout-graph-definition'
 import domElementSelection, {
   DomSelectionBehavior,
   SELECTION_CHANGE_EVENT_TYPE,
-} from 'main/graph/common/selection-behavior'
-import { GraphItem } from 'main/graph/common/graph-definition'
-import { isDefine } from 'main/core/utils'
-import { Optional } from 'main/domain/base'
-import { SvgResourceManager } from 'main/graph/common/svg-resource-manager'
-import { ATTR_ID, ATTR_LAYER, PlainLayerImpl } from 'main/graph/common/layers'
+} from './selection-behavior'
+import { GraphItem } from './graph-definition'
+import { isDefine } from '../../core/utils'
+import { Optional } from '../../domain/base'
+import { SvgResourceManager } from './svg-resource-manager'
+import { ATTR_ID, ATTR_LAYER, PlainLayerImpl } from './layers'
 import {
   ApplyChangesOptions,
   Config,
@@ -54,8 +54,8 @@ import {
   RendererContext,
   RequiredD3DatumRendererFactory,
   Viewport,
-} from 'main/graph/common/d3-layout-graph-component-definitions'
-import { DEFAULT_EDGE_SMOOTH_RADIUS } from 'main/defaults'
+} from './d3-layout-graph-component-definitions'
+import { DEFAULT_EDGE_SMOOTH_RADIUS } from '../../defaults'
 
 const ROLE_NODE = 'node'
 const ROLE_EDGE = 'edge'

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import { ClassView, ViewMeta } from 'main/graph/view-definition'
-import { DIRTY_STATE_LAYOUT, DIRTY_STATE_VISUAL } from 'main/graph/common/dirty-state'
-import { equalsClassByLayout, equalsClassByVisual } from 'main/domain/like/class'
-import { DirtyStateModificationAppliersFactory } from 'main/graph/appliers-common'
+import { ClassView, ViewMeta } from './view-definition'
+import { DIRTY_STATE_LAYOUT, DIRTY_STATE_VISUAL } from './common/dirty-state'
+import { equalsClassByLayout, equalsClassByVisual } from '../domain/like/class'
+import { DirtyStateModificationAppliersFactory } from './appliers-common'
 import {
   DEFAULT_CLASS_HEADER_HEIGHT,
   DEFAULT_CLASS_MARGIN_LEFT,
@@ -26,7 +26,7 @@ import {
   DEFAULT_CLASS_TITLE_FONT_SIZE,
   DEFAULT_CLASS_TITLE_FONT_WEIGHT, DEFAULT_CLASS_TITLE_LINE_HEIGHT,
   DEFAULT_CLASS_WIDTH,
-} from 'main/defaults'
+} from '../defaults'
 import {
   LabelViewModificationAppliers,
   LayoutGraph,
@@ -35,8 +35,8 @@ import {
   LocatablePort,
   NodeViewModificationAppliers,
   PortViewModificationAppliers,
-} from 'main/graph/common/layout-graph-definition'
-import { TextService } from 'main/graph/common/text-service'
+} from './common/layout-graph-definition'
+import { TextService } from './common/text-service'
 
 export const classNodeDirtyStatusApplierFactory: DirtyStateModificationAppliersFactory<ClassView> = (update) => {
   return {

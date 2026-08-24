@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-import { DirtyStateModificationAppliersFactory } from 'main/graph/appliers-common'
-import { IncludePropertiesGroupRelationView } from 'main/graph/view-definition'
-import { DIRTY_STATE_LAYOUT, DIRTY_STATE_VISUAL } from 'main/graph/common/dirty-state'
+import { DirtyStateModificationAppliersFactory } from './appliers-common'
+import { IncludePropertiesGroupRelationView } from './view-definition'
+import { DIRTY_STATE_LAYOUT, DIRTY_STATE_VISUAL } from './common/dirty-state'
 import {
   equalsIncludePropertiesGroupRelationByLayout,
   equalsIncludePropertiesGroupRelationByVisual,
-} from 'main/domain/like/include-properties-group-relation'
+} from '../domain/like/include-properties-group-relation'
 
 export const includePropertiesEdgeDirtyStatusApplierFactory: DirtyStateModificationAppliersFactory<IncludePropertiesGroupRelationView> = (update) => {
   return {

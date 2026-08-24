@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { ViewMeta } from 'main/graph/view-definition'
-import { Integer, Pixel, SHAPE_ROUND_RECTANGLE } from 'main/domain'
+import { ViewMeta } from './view-definition'
+import { Integer, Pixel, SHAPE_ROUND_RECTANGLE } from '../domain'
 import { Selection } from 'd3'
 import {
   DEFAULT_CLASS_ROUND_RECT_RADIUS,
@@ -27,8 +27,8 @@ import {
   DEFAULT_CLASS_SPLITTER_LENGTH,
   DEFAULT_PROPERTIES_GROUP_SPLITTER_PADDING_LEFT,
   DEFAULT_PROPERTIES_GROUP_SPLITTER_PADDING_RIGHT,
-} from 'main/defaults'
-import { D3DatumRendererFactory, RendererContext } from 'main/graph/common/d3-layout-graph-component-definitions'
+} from '../defaults'
+import { D3DatumRendererFactory, RendererContext } from './common/d3-layout-graph-component-definitions'
 
 function roundRectRadius(datum: ViewMeta['node']): Pixel {
   switch (datum.userObject.like.shape) {

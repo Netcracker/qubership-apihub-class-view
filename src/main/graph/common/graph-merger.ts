@@ -24,9 +24,9 @@ import {
   ModificationAppliers,
   RemoveApplier,
   UpdateApplier,
-} from 'main/graph/common/graph-definition'
-import { Optional } from 'main/domain/base'
-import { isDefine } from 'main/core/utils'
+} from './graph-definition'
+import { Optional } from '../../domain/base'
+import { isDefine } from '../../core/utils'
 
 export type Comparator<Key> = (one: Key, another: Key) => number
 

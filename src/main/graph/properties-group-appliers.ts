@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { PropertiesGroupView, ViewMeta } from 'main/graph/view-definition'
-import { DIRTY_STATE_LAYOUT, DIRTY_STATE_VISUAL } from 'main/graph/common/dirty-state'
-import { DirtyStateModificationAppliersFactory } from 'main/graph/appliers-common'
+import { PropertiesGroupView, ViewMeta } from './view-definition'
+import { DIRTY_STATE_LAYOUT, DIRTY_STATE_VISUAL } from './common/dirty-state'
+import { DirtyStateModificationAppliersFactory } from './appliers-common'
 import {
   DEFAULT_PROPERTIES_GROUP_FONT_SIZE,
   DEFAULT_PROPERTIES_GROUP_FONT_WEIGHT,
@@ -26,16 +26,16 @@ import {
   DEFAULT_PROPERTIES_GROUP_PORT_WIDTH,
   DEFAULT_PROPERTIES_GROUP_TITLE_HEIGHT,
   DEFAULT_PROPERTIES_GROUP_TITLE_PADDING_RIGHT,
-} from 'main/defaults'
+} from '../defaults'
 import {
   LabelViewModificationAppliers,
   LayoutGraph,
   LocatableLabel,
   LocatablePort,
   PortViewModificationAppliers,
-} from 'main/graph/common/layout-graph-definition'
-import { equalsPropertiesGroupByLayout, equalsPropertiesGroupByVisual } from 'main/domain/like/properties-group'
-import { TextService } from 'main/graph/common/text-service'
+} from './common/layout-graph-definition'
+import { equalsPropertiesGroupByLayout, equalsPropertiesGroupByVisual } from '../domain/like/properties-group'
+import { TextService } from './common/text-service'
 
 export const propertiesGroupLabelDirtyStatusApplierFactory: DirtyStateModificationAppliersFactory<PropertiesGroupView> = (update) => {
   return {

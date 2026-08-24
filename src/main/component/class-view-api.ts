@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import { DefaultDomainMeta, DomainMeta } from 'main/domain/object/meta'
-import { ContentObject } from 'main/domain/object/content'
-import { Duration, Insets, OptionalMembers, Pixel, Point, Zoom } from 'main/domain/base'
-import { ContentObjectCustomization } from 'main/component/content-object-customization'
+import { DefaultDomainMeta, DomainMeta } from '../domain/object/meta'
+import { ContentObject } from '../domain/object/content'
+import { Duration, Insets, OptionalMembers, Pixel, Point, Zoom } from '../domain/base'
+import { ContentObjectCustomization } from './content-object-customization'
 
 export type DomainObject<Meta extends DomainMeta = DefaultDomainMeta>
   =

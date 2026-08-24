@@ -14,6 +14,6 @@
  * limitations under the License.
  */
 
-export * from 'main/domain'
-export * from 'main/component'
-export * from 'main/defaults'
+export * from './domain'
+export * from './component'
+export * from './defaults'

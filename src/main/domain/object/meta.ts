@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import { ClassObject } from 'main/domain/object/class'
-import { LeafPropertyObject } from 'main/domain/object/leaf-property'
-import { IncludePropertiesGroupRelationObject } from 'main/domain/object/include-properties-group-relation'
-import { PropertyToClassRelationObject } from 'main/domain/object/property-to-class-reference-relation'
-import { PropertiesGroupObject } from 'main/domain/object/properties-group'
+import { ClassObject } from './class'
+import { LeafPropertyObject } from './leaf-property'
+import { IncludePropertiesGroupRelationObject } from './include-properties-group-relation'
+import { PropertyToClassRelationObject } from './property-to-class-reference-relation'
+import { PropertiesGroupObject } from './properties-group'
 
 export interface DomainMeta {
   readonly class: unknown;

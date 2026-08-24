@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { Optional } from 'main/domain/base'
+import { Optional } from '../../domain/base'
 
 export interface GraphMeta {
   readonly key: unknown;

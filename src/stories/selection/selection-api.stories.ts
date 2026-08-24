@@ -23,7 +23,7 @@ import {
   PropertiesGroupObject,
   PropertyObject,
   RelationObject
-} from 'main/domain'
+} from '../../main/domain'
 import {
   generateClassObject,
   generateContent,
@@ -32,10 +32,10 @@ import {
   generatePropertiesGroupObject,
   generatePropertyToClassRelation,
   storyArgsFunc
-} from 'stories/common'
-import { EVENT_SELECTION_CHANGE, SelectableObject, SelectionChangeData } from 'main/component'
+} from '../common'
+import { EVENT_SELECTION_CHANGE, SelectableObject, SelectionChangeData } from '../../main/component'
 import { useArgs } from '@storybook/client-api'
-import { isDefine } from 'main/core/utils'
+import { isDefine } from '../../main/core/utils'
 
 export default {
   title: 'Synthetic/Selection',
