@@ -16,11 +16,7 @@
 
 import { ViewCallback } from './view-callback'
 import { ContentLike } from '../domain/like/content'
-import ElkConstructor from 'elkjs/lib/elk-api.js'
-// Vite's ?worker&inline form: the worker is compiled and embedded as a blob URL, so it
-// travels inside this bundle instead of depending on the bundler emitting a sibling
-// asset that a downstream bundler then has to find again.
-import ElkWorker from 'elkjs/lib/elk-worker.min.js?worker&inline'
+import ElkConstructor from 'elkjs'
 import { AlwaysUniqueChangeableValue, applyCombinedLatest, SimpleChangeableValue } from '../core/changeable-value'
 import { BuildResult, GraphBuilder, GraphBuilderImpl, resolveGraphItems } from './graph-builder'
 import { createLayoutGraph } from './common/elkjs-graph'
@@ -79,18 +75,7 @@ export class GraphView {
     private readonly _viewCallback: ViewCallback,
   ) {
     this._ignoreViewportChangeEvent = false
-    this._mutableGraph = createLayoutGraph<ViewMeta>(new ElkConstructor({
-      // elkjs needs one of workerUrl / workerFactory. Its package main is the NODE entry
-      // (it require()s web-worker and uses require.resolve), so bundled for the browser it
-      // reaches elk-api with neither set and throws "an ELK without both workerUrl and
-      // workerFactory" - except the throw is swallowed, leaving layout() pending forever.
-      //
-      // Under vite 4 an elk-worker asset happened to be emitted and the default URL
-      // resolved. Under vite 8 / rolldown nothing is emitted - verified: the built
-      // showcase contains no elk or worker file at all - so every layout hung, the
-      // component never finished a render, and it did so silently.
-      workerFactory: () => new ElkWorker(),
-    }))
+    this._mutableGraph = createLayoutGraph<ViewMeta>(new ElkConstructor())
     const textService = new TextServiceImpl(this._graphContainer)
     this._graphComponent = new D3LayoutGraphComponent<ViewMeta>(this._mutableGraph, this._graphContainer, <Config<ViewMeta>>{
       selectionChangeCallback: newSelection => {

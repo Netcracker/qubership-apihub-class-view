@@ -27,12 +27,6 @@ export default defineConfig(() => {
         name: 'web-components',
         formats: ['es', 'cjs'],
         fileName: (format) => `index.${format}.js`,
-        /* Vite 8 derives the library CSS filename from the package name, so it emitted
-           qubership-apihub-class-view.css where every earlier version emitted style.css.
-           That name is published: exports maps "./class-view.css" to "./dist/style.css",
-           and ui imports it. Pinned here rather than repointing the export, because the
-           export is the contract and the internal default is what changed. */
-        cssFileName: 'style',
       },
     },
     plugins: [dts({

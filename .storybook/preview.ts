@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import type { Preview } from '@storybook/html-vite'
+import type { Preview } from '@storybook/html'
 
 const preview: Preview = {}
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { Meta } from '@storybook/html-vite'
+import { Meta } from '@storybook/html'
 import { Template } from '../common'
 
 export default {

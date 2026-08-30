@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { Meta, StoryFn } from '@storybook/html-vite'
+import { Meta, StoryFn } from '@storybook/html'
 import { generateContentByPrefix, storyArgsFunc } from '../common'
 import { EVENT_SELECTION_CHANGE, SelectionChangeData } from '../../main/component'
 
