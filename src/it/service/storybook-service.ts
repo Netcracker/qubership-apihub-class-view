@@ -50,7 +50,15 @@ export async function storyPage(page: Page, storyName: string): Promise<StoryPag
   const storyFrame = await waitStoryFrame(page)
   // Emit render-finish DOM event as console.log so the bridge above can catch it.
   await storyFrame.evaluate((eventName, signal) => {
-    document.addEventListener(eventName, () => console.log(signal))
+    // Listen on the component, not on document. class-view dispatches its lifecycle
+    // events with a plain CustomEvent - no { bubbles: true } - so they never reach
+    // document and a document-level listener can never fire. Waiting on it meant
+    // waitRenderClearInterval never settled and the suite hung with no output.
+    const el = document.querySelector('class-view')
+    if (!el) {
+      throw new Error('class-view element not present when attaching the render relay')
+    }
+    el.addEventListener(eventName, () => console.log(signal))
   }, REPUB_EVENT_UPDATE_FINISH, RENDER_SIGNAL)
   // The component may have already rendered during page.goto(). Trigger
   // a re-render so our freshly attached listener catches the event.
@@ -83,24 +91,19 @@ function waitRenderClearInterval(renderEventTarget: EventEmitter): Promise<void>
 }
 
 async function waitStoryFrame(page: Page): Promise<Frame> {
-  let fulfill: (frame: Frame) => void
-  let retryPid: ReturnType<typeof setTimeout>
-  const promise = new Promise<Frame>(x => fulfill = x)
-  checkFrame()
-
-  function checkFrame(): void {
-    page.off('frameattached', checkFrame)
-    clearTimeout(retryPid)
-    const frame = page.mainFrame().childFrames().find(f => f.name() === 'storybook-preview-iframe')
-    if (frame) {
-      fulfill(frame)
-    } else {
-      page.once('frameattached', checkFrame)
-      retryPid = setTimeout(checkFrame, 50)
-    }
+  // Re-acquire the frame through its element handle rather than scanning the frame tree.
+  // The tree scan returns a Frame whose execution context puppeteer never binds under
+  // Storybook 10, so every evaluate() on it waits forever - the frame itself is healthy
+  // (attached, same-origin, readyState complete, JS responsive).
+  const handle = await page.waitForSelector('#storybook-preview-iframe', { timeout: 60000 })
+  if (!handle) {
+    throw new Error('Preview iframe never appeared')
   }
-
-  return promise
+  const frame = await handle.contentFrame()
+  if (!frame) {
+    throw new Error('Preview iframe has no content frame')
+  }
+  return frame
 }
 
 function enableConsoleLogs(page: Page, enable: boolean): void {

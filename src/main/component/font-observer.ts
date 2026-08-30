@@ -27,6 +27,11 @@ import {
 } from '../defaults'
 import { createFarFarAwaySvg, createSvgTextElement, createSvgTSpanElement } from '../core/utils'
 
+/* How long to wait for the laid-out text box that proves the font is applied. The font
+ * itself already has its own 10s budget in FontFaceObserver below; this covers only the
+ * measurement, so it is deliberately short - the fallback is to carry on, not to fail. */
+const FONT_MEASURE_TIMEOUT_MS = 2_000
+
 export class FontObserver {
   private readonly _defaultFont
 
@@ -52,20 +57,52 @@ export class FontObserver {
             const textElement = createSvgTextElement(svg)
             const textTspan = createSvgTSpanElement(svg, fontSizes[0], fontWeight, 'Loading...')
             textElement.appendChild(textTspan)
+
+            // The wait below settles exactly once, whether the observer reports or the
+            // deadline passes. Without the deadline a silent ResizeObserver wedges the
+            // whole component: this promise gates createGraphView(), which gates
+            // applyChanges(), whose `finally` is the only thing that clears
+            // _updateScheduled - so every later invalidate() returns early and no
+            // update-finish event is ever emitted again. Nothing throws and nothing
+            // logs; the component simply stops re-rendering.
+            //
+            // That is not hypothetical. ResizeObserver does not fire for SVG <text> in
+            // the Chrome this repository's screenshot suite runs, even though the
+            // element is laid out and measurable (62x16 inside a visible container).
+            // Measured directly in the preview frame before writing this.
+            //
+            // Resolving on timeout is safe: FontFaceObserver above has already
+            // confirmed the face is loaded, and document.fonts.check() agrees for every
+            // weight. The observer only waits for a measurable box to prove the font is
+            // applied, so proceeding without that proof costs a layout nicety, not
+            // correctness - and hanging forever costs everything.
+            let settled = false
+            const finish = (): void => {
+              if (settled) {
+                return
+              }
+              settled = true
+              clearTimeout(deadline)
+              resizeObserver.unobserve(textElement)
+              if (textElement.parentNode === svg) {
+                svg.removeChild(textElement)
+              }
+              if (svg.parentNode === this._container) {
+                this._container.removeChild(svg)
+              }
+              resolve()
+            }
+
             const resizeObserver = new ResizeObserver(entries => {
               for (const entry of entries) {
                 if (entry.target === textElement) {
-                  resizeObserver.unobserve(textElement)
-                  svg.removeChild(textElement)
-                  this._container.removeChild(svg)
-                  resolve()
+                  finish()
                   return
                 }
               }
-              resizeObserver.unobserve(textElement)
-              svg.removeChild(textElement)
-              this._container.removeChild(svg)
+              finish()
             })
+            const deadline = setTimeout(finish, FONT_MEASURE_TIMEOUT_MS)
             resizeObserver.observe(textElement)
             svg.appendChild(textElement)
           }),
