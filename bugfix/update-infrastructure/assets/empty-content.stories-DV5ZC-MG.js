@@ -1,1 +1,0 @@
-import{n as e}from"./rolldown-runtime-C0FnF6B9.js";import{f as t,i as n,o as r}from"./common-_HpFpOjk.js";var i,a,o,s;function c(){return(c=e((()=>{t(),i={title:`Synthetic/Content`},a=r({}),o=n.bind({}),o.args={content:a},s=[`EmptyContent`]})))()}c();export{o as EmptyContent,s as __namedExportsOrder,i as default};

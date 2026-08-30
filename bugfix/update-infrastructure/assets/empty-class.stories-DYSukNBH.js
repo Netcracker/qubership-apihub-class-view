@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{a as t,f as n,i as r,o as i,t as a}from"./common-kYjFA7m2.js";var o,s,c,l;function u(){return(u=e((()=>{n(),o={title:`Synthetic/Content`},s=i({classes:[t(`1${a}`)]}),c=r.bind({}),c.args={content:s},l=[`EmptyClass`]})))()}u();export{c as EmptyClass,l as __namedExportsOrder,o as default};
