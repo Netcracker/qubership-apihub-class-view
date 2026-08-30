@@ -1,4 +1,5 @@
 import { FontWeight, OneLineText, Optional, Pixel, Ratio } from '../../domain';
+
 interface TextCropRule {
     readonly text: OneLineText;
     readonly fontSize: Pixel;

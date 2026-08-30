@@ -1,4 +1,5 @@
 import { Selection } from 'd3';
+
 export declare const SELECTION_CHANGE_EVENT_TYPE = "selection";
 export type SelectableElementBaseType = Element;
 export type ClearSelectionElementBaseType = Element;

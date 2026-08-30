@@ -3,6 +3,7 @@ import { ContentLike } from '../domain/like/content';
 import { NavigableLike, SelectableLike } from '../domain/like/all';
 import { Duration, Optional, Pixel, Point, Zoom } from '../domain/base';
 import { NavigateOptions } from '../component/class-view-api';
+
 export interface DeferredNavigate {
     readonly objects: NavigableLike[];
     readonly options: NavigateOptions;

@@ -5,6 +5,7 @@ import { DomainLike } from '../domain/like/all';
 import { DomainMeta, PropertyObject } from '../domain/object/meta';
 import { DomainObject } from '../component/class-view-api';
 import { ClassObject } from '../domain/object/class';
+
 export declare function resolveLikes<Meta extends DomainMeta>(cr: ConvertResult<Meta>, objects: DomainObject<Meta>[]): DomainLike[];
 export declare function resolveObjects<Meta extends DomainMeta>(cr: ConvertResult<Meta>, likes: DomainLike[]): DomainObject<Meta>[];
 export interface ConvertResult<Meta extends DomainMeta> {

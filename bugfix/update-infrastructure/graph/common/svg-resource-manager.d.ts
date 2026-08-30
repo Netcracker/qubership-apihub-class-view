@@ -1,5 +1,6 @@
 import { Selection } from 'd3';
 import { Pixel, Point } from '../../domain';
+
 export interface SvgResourceDefiner {
     addDefinition(name: PropertyKey, newDef: SVGElement | HTMLElement): void;
 }

@@ -4,6 +4,7 @@ import { ClassLike } from './class';
 import { LeafPropertyLike } from './leaf-property';
 import { PropertiesGroupLike } from './properties-group';
 import { Shape } from '..';
+
 export interface HasIdentityLike {
     readonly key: Key;
 }

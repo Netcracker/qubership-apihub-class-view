@@ -3,6 +3,7 @@ import { LeafPropertyObject } from './leaf-property';
 import { IncludePropertiesGroupRelationObject } from './include-properties-group-relation';
 import { PropertyToClassRelationObject } from './property-to-class-reference-relation';
 import { PropertiesGroupObject } from './properties-group';
+
 export interface DomainMeta {
     readonly class: unknown;
     readonly leafProperty: unknown;

@@ -1,5 +1,6 @@
 import { Length, Point, Size } from '../../../domain/base';
 import { ImmutableRectangle } from './immutable-rectangle';
+
 export declare class MutableRectangle {
     private minX;
     private minY;

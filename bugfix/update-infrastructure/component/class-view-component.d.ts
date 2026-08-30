@@ -3,6 +3,7 @@ import { ClassViewApi, NavigableObject, NavigateOptions, RichHTMLElementEventMap
 import { ContentObject } from '../domain/object/content';
 import { Duration, OptionalMembers, Pixel, Point, Zoom } from '../domain/base';
 import { ClassObject } from '../domain/object/class';
+
 export declare class ClassViewComponent<Meta extends DomainMeta = DefaultDomainMeta> extends window.HTMLElement implements ClassViewApi<Meta> {
     private readonly _converter;
     private readonly _selectedObjects;

@@ -2,6 +2,7 @@ import { DefaultDomainMeta, DomainMeta } from '../domain/object/meta';
 import { ContentObject } from '../domain/object/content';
 import { Duration, Insets, OptionalMembers, Pixel, Point, Zoom } from '../domain/base';
 import { ContentObjectCustomization } from './content-object-customization';
+
 export type DomainObject<Meta extends DomainMeta = DefaultDomainMeta> = Meta['class'] | Meta['leafProperty'] | Meta['propertiesGroup'] | Meta['propertyToClassRelation'] | Meta['includeGroupFromClassRelation'];
 export type SelectableObject<Meta extends DomainMeta = DefaultDomainMeta> = DomainObject<Meta>;
 export type NavigableObject<Meta extends DomainMeta = DefaultDomainMeta> = DomainObject<Meta>;

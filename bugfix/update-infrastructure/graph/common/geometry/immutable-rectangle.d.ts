@@ -1,4 +1,5 @@
 import { Length, Point, Size } from '../../../domain/base';
+
 export declare class ImmutableRectangle {
     private readonly _center;
     private readonly _size;

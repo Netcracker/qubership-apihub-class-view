@@ -1,5 +1,6 @@
 import { SelectableLike } from '../domain/like/all';
 import { Pixel, Point, Zoom } from '../domain/base';
+
 export interface ViewCallback {
     layoutStart(): void;
     layoutFinish(): void;

@@ -1,5 +1,6 @@
 import { CreateApplier, GraphMerger, GraphMergerSession, GraphMeta, MergeResult, RemoveApplier, UpdateApplier } from './graph-definition';
 import { Optional } from '../../domain/base';
+
 export type Comparator<Key> = (one: Key, another: Key) => number;
 export declare class GraphMergerImpl<Meta extends GraphMeta> implements GraphMerger<Meta> {
     private readonly _comparator;

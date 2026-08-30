@@ -4,6 +4,7 @@ import { Integer, Optional } from '../domain/base';
 import { DomainLike } from '../domain/like/all';
 import { DomainGraphItem, ViewMeta } from './view-definition';
 import { TextService } from './common/text-service';
+
 export declare function resolveGraphItems<Meta extends ViewMeta>(br: BuildResult<Meta>, domainLikes: DomainLike[]): DomainGraphItem<Meta>[];
 export interface BuildResult<Meta extends ViewMeta> {
     readonly dirtyState: DirtyState;

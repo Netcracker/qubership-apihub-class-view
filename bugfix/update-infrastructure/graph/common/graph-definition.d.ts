@@ -1,4 +1,5 @@
 import { Optional } from '../../domain/base';
+
 export interface GraphMeta {
     readonly key: unknown;
     readonly graph: IGraph<this>;

@@ -1,6 +1,7 @@
 import { HasGraphItemKey, LayoutGraph, LayoutGraphMeta } from './layout-graph-definition';
 import { GraphItem } from './graph-definition';
 import { ApplyChangesOptions, Config, D3DatumRendererFactory, Layer, LayerConfig, Viewport } from './d3-layout-graph-component-definitions';
+
 export declare class D3LayoutGraphComponent<Meta extends LayoutGraphMeta> {
     private readonly _graph;
     private readonly _container;
