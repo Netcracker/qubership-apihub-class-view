@@ -5,7 +5,6 @@ import { LeafPropertyObject } from '../domain/object/leaf-property';
 import { PropertiesGroupObject } from '../domain/object/properties-group';
 import { IncludePropertiesGroupRelationObject } from '../domain/object/include-properties-group-relation';
 import { PropertyToClassRelationObject } from '../domain/object/property-to-class-reference-relation';
-
 declare const CUSTOMIZATION_FUNCTION_SUFFIX = "Function";
 type ClassCustomization<Meta extends DomainMeta, Props extends keyof ClassObject<PropertyObject<Meta>>> = {
     [Prop in Props as `${typeof OBJECT_TYPE_CLASS}${Capitalize<Prop>}${typeof CUSTOMIZATION_FUNCTION_SUFFIX}`]: (cl: Meta['class']) => ClassObject<PropertyObject<Meta>>[Prop];

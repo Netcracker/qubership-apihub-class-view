@@ -1,7 +1,6 @@
 import { Optional, OptionalMembers } from '../domain/base';
 import { DomainMeta } from '../domain/object/meta';
 import { NavigableObject, NavigateOptions } from './class-view-api';
-
 export interface DeferredOperations<Meta extends DomainMeta> {
     navigate: Optional<DeferredNavigate<Meta>>;
 }

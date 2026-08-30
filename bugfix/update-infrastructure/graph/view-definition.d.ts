@@ -7,7 +7,6 @@ import { IncludePropertiesGroupRelationLike } from '../domain/like/include-prope
 import { PropertyToClassRelationLike } from '../domain/like/property-to-class-reference-relation';
 import { GraphItem } from './common/graph-definition';
 import { RelationLike } from '../domain/like/all';
-
 export interface ClassView {
     readonly type: typeof VIEW_TYPE_CLASS;
     readonly like: ClassLike;

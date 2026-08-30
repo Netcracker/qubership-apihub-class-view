@@ -1,6 +1,5 @@
 import { Color, Duration, FontWeight, Insets, OneLineText, Pixel, Point } from './domain/base';
 import { Shape } from './domain';
-
 export declare const DEFAULT_ZOOM = 1;
 export declare const DEFAULT_VIEWPORT_CENTER: Point<Pixel>;
 export declare const DEFAULT_CONTENT_INSETS: Insets<Pixel>;

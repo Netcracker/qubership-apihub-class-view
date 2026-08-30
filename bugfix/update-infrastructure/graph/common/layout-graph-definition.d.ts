@@ -1,6 +1,5 @@
 import { OneLineText, Pixel, Point, Size } from '../../domain/base';
 import { GraphMeta, IGraph, ModificationAppliers } from './graph-definition';
-
 export type GraphItemKey = string;
 export type EdgePath = Point<Pixel>[];
 export interface LayoutGraphMeta extends GraphMeta {

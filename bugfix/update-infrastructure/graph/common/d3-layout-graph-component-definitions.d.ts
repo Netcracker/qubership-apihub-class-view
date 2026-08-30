@@ -3,7 +3,6 @@ import { GraphItem } from './graph-definition';
 import { SvgResourceDefiner, SvgResourceReader } from './svg-resource-manager';
 import { BaseType, Selection, Transition } from 'd3';
 import { Duration, Pixel, Point, Zoom } from '../../domain';
-
 export interface RendererContext<Meta extends LayoutGraphMeta> {
     readonly graph: Meta['graph'];
     readonly transition: Transition<BaseType, unknown, null, unknown>;

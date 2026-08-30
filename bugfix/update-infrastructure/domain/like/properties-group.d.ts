@@ -2,7 +2,6 @@ import { HasDeprecationLike, HasIdentityLike, HasNameLike, HasPropertiesLike, Ha
 import { LIKE_TYPE_PROPERTY_GROUP } from './type';
 import { LeafPropertyLike } from './leaf-property';
 import { IsEqualFunction } from '../base';
-
 export interface PropertiesGroupLike extends HasIdentityLike, HasTypeLike<typeof LIKE_TYPE_PROPERTY_GROUP>, HasNameLike, HasDeprecationLike, HasPropertiesLike<LeafPropertyLike> {
 }
 export declare const equalsPropertiesGroupByLayout: IsEqualFunction<PropertiesGroupLike>;

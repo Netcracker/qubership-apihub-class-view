@@ -1,5 +1,4 @@
 import { HasDeprecationLike, HasIdentityLike, HasNameLike, HasPrimaryLike, HasPropertyTypeDeprecationLike, HasPropertyTypeLike, HasReferenceFromGroupToClassLike, HasReferenceFromPropertyToClassLike, HasRequiredLike, HasShapeLike } from './base';
-
 export declare function equalsByIdentity(first: HasIdentityLike, second: HasIdentityLike): boolean;
 export declare function equalsByName(first: HasNameLike, second: HasNameLike): boolean;
 export declare function equalsByShape(first: HasShapeLike, second: HasShapeLike): boolean;

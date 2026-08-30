@@ -3,7 +3,6 @@ import { ClassObject } from './class';
 import { LeafPropertyObject } from './leaf-property';
 import { PropertiesGroupObject } from './properties-group';
 import { Shape } from './shape';
-
 export interface HasIdentity {
     readonly key?: Key;
 }

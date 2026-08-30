@@ -1,7 +1,6 @@
 import { Selection, ZoomTransform } from 'd3';
 import { HasGraphItemKey, LayoutGraphMeta } from './layout-graph-definition';
 import { D3DatumRenderer, Layer, LayerConfig, RendererContext } from './d3-layout-graph-component-definitions';
-
 export declare const ATTR_ID = "data-id";
 export declare const ATTR_LAYER = "data-layer";
 export declare class PlainLayerImpl<Meta extends LayoutGraphMeta, Datum extends HasGraphItemKey> implements Layer<Datum> {
