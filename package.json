@@ -41,8 +41,8 @@
     "fast-equals": "^5.0.1",
     "fontfaceobserver": "^2.3.0",
     "lodash-es": "^4.17.21",
-    "web-worker": "^1.0.0",
-    "svg-round-corners": "0.4.1"
+    "svg-round-corners": "0.4.1",
+    "web-worker": "^1.0.0"
   },
   "devDependencies": {
     "@netcracker/qubership-apihub-jest-chrome-in-docker-environment": "bugfix-update-infrastructure",
@@ -77,8 +77,8 @@
     "storybook": "^7.5.2",
     "ts-jest": "29.4.12",
     "typescript": "6.0.3",
-    "vite": "^4.4.5",
-    "vite-plugin-dts": "^3.6.3"
+    "vite": "^8.2.2",
+    "vite-plugin-dts": "^4.5.4"
   },
   "overrides": {
     "jest-environment-node": "30.4.1",
