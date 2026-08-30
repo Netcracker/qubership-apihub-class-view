@@ -52,7 +52,13 @@ export class StoryPageImpl implements StoryPage {
   }
 
   public async embeddedOptionsControl(name: string): Promise<EmbeddedOptionsControl> {
-    const control = (await this._page.waitForSelector(`::-p-xpath(//td[./span[text()='${name}']]/following-sibling::td//div)`)) as ElementHandle
+    // The value cell itself, rather than anything inside it. Storybook 7 wrapped a radio
+    // group in a <div>; Storybook 10 wraps it in a <fieldset>, so the old
+    // ".../following-sibling::td//div" matched nothing and every options-control test timed
+    // out waiting 30s for a node that no longer exists. Addressing the <td> is agnostic to
+    // whatever Storybook wraps the inputs in next - the check() below finds the radio by
+    // value from here, and that markup is unchanged.
+    const control = (await this._page.waitForSelector(`::-p-xpath(//td[./span[text()='${name}']]/following-sibling::td)`)) as ElementHandle
     if (!control) {
       throw new Error(`Unable to find control ${name}`)
     }
