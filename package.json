@@ -16,7 +16,6 @@
   },
   "sideEffects": false,
   "scripts": {
-    "postinstall": "node ./bin/monky-patchng-storybook.js",
     "lint:check": "tsc && eslint src --ext ts --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "npm run lint:check -- --fix",
     "build": "npm run build:dist && npm run build:showcase",
