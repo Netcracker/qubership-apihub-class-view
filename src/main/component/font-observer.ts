@@ -16,7 +16,7 @@
 
 import FontFaceObserver from 'fontfaceobserver'
 
-import { FontFamily, FontWeight, Pixel } from 'main/domain'
+import { FontFamily, FontWeight, Pixel } from '../domain'
 import {
   DEFAULT_CLASS_TITLE_FONT_SIZE,
   DEFAULT_CLASS_TITLE_FONT_WEIGHT,
@@ -24,8 +24,8 @@ import {
   DEFAULT_LEAF_PROPERTY_FONT_WEIGHT,
   DEFAULT_PROPERTIES_GROUP_FONT_SIZE,
   DEFAULT_PROPERTIES_GROUP_FONT_WEIGHT,
-} from 'main/defaults'
-import { createFarFarAwaySvg, createSvgTextElement, createSvgTSpanElement } from 'main/core/utils'
+} from '../defaults'
+import { createFarFarAwaySvg, createSvgTextElement, createSvgTSpanElement } from '../core/utils'
 
 export class FontObserver {
   private readonly _defaultFont

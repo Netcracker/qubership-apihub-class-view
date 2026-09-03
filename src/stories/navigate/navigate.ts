@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { DEFAULT_ANIMATION_DURATION, DEFAULT_CONTENT_INSETS } from 'main/defaults'
+import { DEFAULT_ANIMATION_DURATION, DEFAULT_CONTENT_INSETS } from '../../main/defaults'
 import { Args, ArgTypes } from '@storybook/html'
-import { Duration, Insets, Pixel } from 'main/domain'
+import { Duration, Insets, Pixel } from '../../main/domain'
 
 export const NAVIGATION_OPTION_ARGS_TYPE: ArgTypes = {
   navigateOptionAnimationDuration: {

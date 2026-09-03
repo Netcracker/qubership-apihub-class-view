@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { ClassLike } from 'main/domain/like/class'
-import { LeafPropertyLike } from 'main/domain/like/leaf-property'
-import { OneLineText, Pixel } from 'main/domain/base'
+import { ClassLike } from '../domain/like/class'
+import { LeafPropertyLike } from '../domain/like/leaf-property'
+import { OneLineText, Pixel } from '../domain/base'
 import {
   EdgePath,
   HasGraphItemKey,
@@ -25,12 +25,12 @@ import {
   LocatableLabel,
   LocatableNode,
   LocatablePort,
-} from 'main/graph/common/layout-graph-definition'
-import { PropertiesGroupLike } from 'main/domain/like/properties-group'
-import { IncludePropertiesGroupRelationLike } from 'main/domain/like/include-properties-group-relation'
-import { PropertyToClassRelationLike } from 'main/domain/like/property-to-class-reference-relation'
-import { GraphItem } from 'main/graph/common/graph-definition'
-import { RelationLike } from 'main/domain/like/all'
+} from './common/layout-graph-definition'
+import { PropertiesGroupLike } from '../domain/like/properties-group'
+import { IncludePropertiesGroupRelationLike } from '../domain/like/include-properties-group-relation'
+import { PropertyToClassRelationLike } from '../domain/like/property-to-class-reference-relation'
+import { GraphItem } from './common/graph-definition'
+import { RelationLike } from '../domain/like/all'
 
 export interface ClassView {
   readonly type: typeof VIEW_TYPE_CLASS;

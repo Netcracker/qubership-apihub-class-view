@@ -24,8 +24,8 @@ import {
   LEAF_PROPERTY_SUFFIX,
   PROPERTIES_GROUP_SUFFIX,
   Template
-} from 'stories/common'
-import { ClassObject, DefaultDomainMeta, LeafPropertyObject, PropertiesGroupObject, PropertyObject } from 'main/domain'
+} from '../common'
+import { ClassObject, DefaultDomainMeta, LeafPropertyObject, PropertiesGroupObject, PropertyObject } from '../../main/domain'
 
 export default {
   title: 'Synthetic/Content',

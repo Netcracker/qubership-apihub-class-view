@@ -21,13 +21,6 @@ import dts from 'vite-plugin-dts'
 // https://vitejs.dev/config/
 export default defineConfig(() => {
   return {
-    resolve: {
-      alias: {
-        'assets': resolve(__dirname, './src/assets'),
-        'main': resolve(__dirname, './src/main'),
-        'stories': resolve(__dirname, './src/stories'),
-      },
-    },
     build: {
       lib: {
         entry: resolve(__dirname, './src/main/index.ts'),
@@ -38,6 +31,10 @@ export default defineConfig(() => {
     },
     plugins: [dts({
       include: './src/main/**',
+      // The compiler rootDir is the package root so that src/it and src/stories are
+      // inside it; entryRoot keeps the emitted declarations flat under dist/, which is
+      // where the published `types` entry points.
+      entryRoot: './src/main',
     })],
   }
 })

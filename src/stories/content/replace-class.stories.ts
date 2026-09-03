@@ -22,8 +22,8 @@ import {
   LeafPropertyObject,
   PropertiesGroupObject,
   PropertyObject
-} from 'main/domain'
-import { storyArgsFunc } from 'stories/common'
+} from '../../main/domain'
+import { storyArgsFunc } from '../common'
 
 const PROPERTY_ONE: LeafPropertyObject = {
   key: 'property1',

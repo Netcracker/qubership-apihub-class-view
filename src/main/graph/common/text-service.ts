@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { FontWeight, Integer, OneLineText, Optional, Pixel, Ratio } from 'main/domain'
-import { DEFAULT_ELLIPSIS_CHARACTER } from 'main/defaults'
-import { createFarFarAwaySvg, createSvgTextElement, createSvgTSpanElement, isDefine } from 'main/core/utils'
+import { FontWeight, Integer, OneLineText, Optional, Pixel, Ratio } from '../../domain'
+import { DEFAULT_ELLIPSIS_CHARACTER } from '../../defaults'
+import { createFarFarAwaySvg, createSvgTextElement, createSvgTSpanElement, isDefine } from '../../core/utils'
 
 interface TextCropRule {
   readonly text: OneLineText;

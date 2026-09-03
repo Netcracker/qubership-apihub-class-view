@@ -15,8 +15,8 @@
  */
 
 import { dispatch, pointer, select, Selection } from 'd3'
-import { Optional, Pixel } from 'main/domain/base'
-import { isDefine } from 'main/core/utils'
+import { Optional, Pixel } from '../../domain/base'
+import { isDefine } from '../../core/utils'
 import { shallowEqual } from 'fast-equals'
 
 export const SELECTION_CHANGE_EVENT_TYPE = 'selection'

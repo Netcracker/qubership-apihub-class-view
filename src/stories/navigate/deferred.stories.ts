@@ -23,7 +23,7 @@ import {
   PropertiesGroupObject,
   PropertyObject,
   RelationObject,
-} from 'main/domain'
+} from '../../main/domain'
 import {
   generateClassObject,
   generateContent,
@@ -32,13 +32,13 @@ import {
   generatePropertyToClassRelation,
   range,
   storyArgsFunc,
-} from 'stories/common'
+} from '../common'
 import {
   NAVIGATION_OPTION_ARGS,
   NAVIGATION_OPTION_ARGS_TYPE,
   NavigationOptionConfiguration,
-} from 'stories/navigate/navigate'
-import { NavigateOptions } from 'main/component'
+} from './navigate'
+import { NavigateOptions } from '../../main/component'
 
 enum NavigateTarget {
   NONE,

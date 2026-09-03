@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { DefaultDomainMeta, DomainMeta, PropertyObject, RelationObject } from 'main/domain/object/meta'
-import { ClassViewComponent } from 'main/component'
+import { DefaultDomainMeta, DomainMeta, PropertyObject, RelationObject } from '../main/domain/object/meta'
+import { ClassViewComponent } from '../main/component'
 import { StoryFn } from '@storybook/html'
 import { action } from '@storybook/addon-actions'
 import { useChannel } from '@storybook/addons'
@@ -29,7 +29,7 @@ import {
   EVENT_UPDATE_START,
   EVENT_VIEWPORT_CENTER_CHANGE,
   EVENT_ZOOM_CHANGE,
-} from 'main/component/class-view-api'
+} from '../main/component/class-view-api'
 import {
   ClassObject,
   ContentObject,
@@ -43,7 +43,7 @@ import {
   PropertyToClassRelationObject,
   RELATION_TYPE_INCLUDE_PROPERTIES_GROUP,
   RELATION_TYPE_PROPERTY_TO_CLASS_REFERENCE,
-} from 'main/domain'
+} from '../main/domain'
 
 type StoryArgs<Meta extends DomainMeta> = Pick<ClassViewComponent<Meta>, keyof ClassViewApi<Meta>>
 

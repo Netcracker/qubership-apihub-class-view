@@ -15,8 +15,8 @@
  */
 
 // i look at all library from https://www.akselipalen.com/2021/06/10/2d-geometry-libraries-for-javascript/ and no one contains mutable geometries
-import { Length, Point, Size } from 'main/domain/base'
-import { ImmutableRectangle } from 'main/graph/common/geometry/immutable-rectangle'
+import { Length, Point, Size } from '../../../domain/base'
+import { ImmutableRectangle } from './immutable-rectangle'
 
 export class MutableRectangle {
   private minX: Length

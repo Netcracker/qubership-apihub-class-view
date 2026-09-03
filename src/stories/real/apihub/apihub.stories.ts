@@ -15,7 +15,7 @@
  */
 
 import { Meta, StoryFn } from '@storybook/html'
-import { storyArgsFunc } from 'stories/common'
+import { storyArgsFunc } from '../../common'
 
 export default {
   title: 'real/API HUB',

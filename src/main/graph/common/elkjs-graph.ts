@@ -15,7 +15,7 @@
  */
 
 import { ELK, ElkExtendedEdge, ElkLabel, ElkNode, ElkPort, LayoutOptions } from 'elkjs'
-import { OneLineText, Pixel, Point, Size, UnwrapArray } from 'main/domain/base'
+import { OneLineText, Pixel, Point, Size, UnwrapArray } from '../../domain/base'
 import {
   EdgePath,
   GraphItemKey,
@@ -25,10 +25,10 @@ import {
   LocatableLabel,
   LocatableNode,
   LocatablePort,
-} from 'main/graph/common/layout-graph-definition'
-import { ListMultimap } from 'main/core/list-multimap'
-import { ConnectableGraphItem, GraphItem, ItemReducer, LabelOwnerGraphItem } from 'main/graph/common/graph-definition'
-import { isDefine } from 'main/core/utils'
+} from './layout-graph-definition'
+import { ListMultimap } from '../../core/list-multimap'
+import { ConnectableGraphItem, GraphItem, ItemReducer, LabelOwnerGraphItem } from './graph-definition'
+import { isDefine } from '../../core/utils'
 
 interface ElkJsGraphMetaImpl extends LayoutGraphMeta {
   readonly graph: ElkJsGraphImpl<this>;

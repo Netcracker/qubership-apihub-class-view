@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { Optional } from 'main/domain/base'
-import { DefaultDomainMeta, DomainMeta, RelationObject } from 'main/domain/object/meta'
+import { Optional } from '../base'
+import { DefaultDomainMeta, DomainMeta, RelationObject } from './meta'
 
 export interface ContentObject<Meta extends DomainMeta = DefaultDomainMeta> {
   readonly classes?: Optional<Meta['class'][]>;

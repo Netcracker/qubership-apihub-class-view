@@ -22,8 +22,8 @@ import {
   VIEW_TYPE_LEAF_PROPERTY,
   VIEW_TYPE_PROPERTIES_GROUP,
   ViewMeta,
-} from 'main/graph/view-definition'
-import { LocatableLabel } from 'main/graph/common/layout-graph-definition'
+} from './view-definition'
+import { LocatableLabel } from './common/layout-graph-definition'
 import {
   DEFAULT_CLASS_MARGIN_LEFT,
   DEFAULT_CLASS_SHAPE_FILL_COLOR,
@@ -46,10 +46,10 @@ import {
   DEFAULT_PROPERTIES_GROUP_ICON_SIZE,
   DEFAULT_PROPERTIES_GROUP_ICON_TO_NAME_SEPARATOR_LENGTH,
   DEFAULT_PROPERTIES_GROUP_SELECTION_FILL_COLOR,
-} from 'main/defaults'
-import groupIcon from 'assets/group-icon.svg?raw'
-import { SvgResourceDefiner } from 'main/graph/common/svg-resource-manager'
-import { D3DatumRenderer, D3DatumRendererFactory, Layer } from 'main/graph/common/d3-layout-graph-component-definitions'
+} from '../defaults'
+import groupIcon from '../../assets/group-icon.svg?raw'
+import { SvgResourceDefiner } from './common/svg-resource-manager'
+import { D3DatumRenderer, D3DatumRendererFactory, Layer } from './common/d3-layout-graph-component-definitions'
 
 function createClassLabelMainFactory(tooltipLayer: Layer<LocatableLabel<ClassView>>): D3DatumRenderer<ViewMeta, LocatableLabel<ClassView>> {
   return {

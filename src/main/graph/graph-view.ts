@@ -14,34 +14,34 @@
  * limitations under the License.
  */
 
-import { ViewCallback } from 'main/graph/view-callback'
-import { ContentLike } from 'main/domain/like/content'
+import { ViewCallback } from './view-callback'
+import { ContentLike } from '../domain/like/content'
 import ElkConstructor from 'elkjs'
-import { AlwaysUniqueChangeableValue, applyCombinedLatest, SimpleChangeableValue } from 'main/core/changeable-value'
-import { BuildResult, GraphBuilder, GraphBuilderImpl, resolveGraphItems } from 'main/graph/graph-builder'
-import { createLayoutGraph } from 'main/graph/common/elkjs-graph'
-import { DIRTY_STATE_LAYOUT } from 'main/graph/common/dirty-state'
-import { D3LayoutGraphComponent } from 'main/graph/common/d3-layout-graph-component'
+import { AlwaysUniqueChangeableValue, applyCombinedLatest, SimpleChangeableValue } from '../core/changeable-value'
+import { BuildResult, GraphBuilder, GraphBuilderImpl, resolveGraphItems } from './graph-builder'
+import { createLayoutGraph } from './common/elkjs-graph'
+import { DIRTY_STATE_LAYOUT } from './common/dirty-state'
+import { D3LayoutGraphComponent } from './common/d3-layout-graph-component'
 import {
   DomainGraphItem,
   VIEW_TYPE_LEAF_PROPERTY,
   VIEW_TYPE_PROPERTIES_GROUP,
   ViewMeta,
   VirtualRelation,
-} from 'main/graph/view-definition'
-import { LayoutGraph } from 'main/graph/common/layout-graph-definition'
-import { NavigableLike, SelectableLike } from 'main/domain/like/all'
-import { Duration, Optional, Pixel, Point, Zoom } from 'main/domain/base'
-import { DEFAULT_CONTENT_INSETS, DEFAULT_VIEWPORT_CENTER, DEFAULT_ZOOM } from 'main/defaults'
-import { NavigateOptions } from 'main/component/class-view-api'
-import { MutableRectangle } from 'main/graph/common/geometry/mutable-rectangle'
-import { isDefine } from 'main/core/utils'
-import { NODE_RENDERER_FACTORY } from 'main/graph/node-style'
-import { createLabelRendererFactory, TOOLTIP_LABEL_RENDERER_FACTORY } from 'main/graph/label-style'
-import { EDGE_RENDERER_FACTORY, HIGHLIGHTED_RELATION_EDGE_RENDERER_FACTORY } from 'main/graph/edge-style'
-import { PORT_RENDERER_FACTORY } from 'main/graph/port-style'
-import { TextServiceImpl } from 'main/graph/common/text-service'
-import { Config, Layer, Viewport } from 'main/graph/common/d3-layout-graph-component-definitions'
+} from './view-definition'
+import { LayoutGraph } from './common/layout-graph-definition'
+import { NavigableLike, SelectableLike } from '../domain/like/all'
+import { Duration, Optional, Pixel, Point, Zoom } from '../domain/base'
+import { DEFAULT_CONTENT_INSETS, DEFAULT_VIEWPORT_CENTER, DEFAULT_ZOOM } from '../defaults'
+import { NavigateOptions } from '../component/class-view-api'
+import { MutableRectangle } from './common/geometry/mutable-rectangle'
+import { isDefine } from '../core/utils'
+import { NODE_RENDERER_FACTORY } from './node-style'
+import { createLabelRendererFactory, TOOLTIP_LABEL_RENDERER_FACTORY } from './label-style'
+import { EDGE_RENDERER_FACTORY, HIGHLIGHTED_RELATION_EDGE_RENDERER_FACTORY } from './edge-style'
+import { PORT_RENDERER_FACTORY } from './port-style'
+import { TextServiceImpl } from './common/text-service'
+import { Config, Layer, Viewport } from './common/d3-layout-graph-component-definitions'
 
 export interface DeferredNavigate {
   readonly objects: NavigableLike[];

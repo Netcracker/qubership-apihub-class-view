@@ -15,9 +15,9 @@
  */
 
 import { Selection } from 'd3'
-import { isDefine } from 'main/core/utils'
-import { Pixel, Point } from 'main/domain'
-import { MutableRectangle } from 'main/graph/common/geometry/mutable-rectangle'
+import { isDefine } from '../../core/utils'
+import { Pixel, Point } from '../../domain'
+import { MutableRectangle } from './geometry/mutable-rectangle'
 
 export interface SvgResourceDefiner {
   addDefinition(name: PropertyKey, newDef: SVGElement | HTMLElement): void //todo maybe async in future. But we should stop render finish to wait it

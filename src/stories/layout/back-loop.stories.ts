@@ -24,7 +24,7 @@ import {
   LEAF_PROPERTY_SUFFIX,
   range,
   Template
-} from 'stories/common'
+} from '../common'
 
 export default {
   title: 'Synthetic/Layout',

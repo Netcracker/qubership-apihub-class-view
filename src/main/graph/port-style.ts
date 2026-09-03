@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { LocatablePort } from 'main/graph/common/layout-graph-definition'
+import { LocatablePort } from './common/layout-graph-definition'
 import {
   ClassView,
   LeafPropertyView,
@@ -22,15 +22,15 @@ import {
   VIEW_TYPE_LEAF_PROPERTY,
   VIEW_TYPE_PROPERTIES_GROUP,
   ViewMeta,
-} from 'main/graph/view-definition'
-import { D3DatumRenderer, D3DatumRendererFactory } from 'main/graph/common/d3-layout-graph-component-definitions'
-import { Color } from 'main/domain'
+} from './view-definition'
+import { D3DatumRenderer, D3DatumRendererFactory } from './common/d3-layout-graph-component-definitions'
+import { Color } from '../domain'
 import {
   DEFAULT_INCLUDE_PROPERTIES_GROUP_RELATION_SELECTION_STROKE_COLOR,
   DEFAULT_INCLUDE_PROPERTIES_GROUP_RELATION_STROKE_COLOR,
   DEFAULT_PROPERTY_TO_CLASS_RELATION_SELECTION_STROKE_COLOR,
   DEFAULT_PROPERTY_TO_CLASS_RELATION_STROKE_COLOR,
-} from 'main/defaults'
+} from '../defaults'
 
 const VOID_PORT_STYLER: D3DatumRenderer<ViewMeta, LocatablePort<ClassView>> & D3DatumRenderer<ViewMeta, LocatablePort<PropertiesGroupView>> = {
   id: 'void-port',

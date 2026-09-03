@@ -21,12 +21,12 @@ import {
   HasPropertiesLike,
   HasShapeLike,
   HasTypeLike,
-} from 'main/domain/like/base'
+} from './base'
 import { createCustomEqual } from 'fast-equals'
-import { LIKE_TYPE_CLASS } from 'main/domain/like/type'
-import { equalsByDeprecation, equalsByIdentity, equalsByName, equalsByShape } from 'main/domain/like/base-equals'
-import { PropertyLike } from 'main/domain/like/all'
-import { IsEqualFunction } from 'main/domain/base'
+import { LIKE_TYPE_CLASS } from './type'
+import { equalsByDeprecation, equalsByIdentity, equalsByName, equalsByShape } from './base-equals'
+import { PropertyLike } from './all'
+import { IsEqualFunction } from '../base'
 
 export interface ClassLike extends HasIdentityLike, HasNameLike, HasTypeLike<typeof LIKE_TYPE_CLASS>, HasPropertiesLike<PropertyLike>, HasShapeLike, HasDeprecationLike {
 }

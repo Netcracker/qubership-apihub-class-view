@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { HasDeprecation, HasIdentity, HasName, HasProperties, HasShape } from 'main/domain/object/base'
+import { HasDeprecation, HasIdentity, HasName, HasProperties, HasShape } from './base'
 
 export interface ClassObject<Property> extends HasIdentity, HasName, HasProperties<Property>, HasShape, HasDeprecation {
 }

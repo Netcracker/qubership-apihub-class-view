@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-import { ContentLike } from 'main/domain/like/content'
-import { GraphMergerImpl } from 'main/graph/common/graph-merger'
-import { DIRTY_STATE_NONE, DirtyState, mergeDirtyState } from 'main/graph/common/dirty-state'
-import { Integer, Optional, Pixel, Point } from 'main/domain/base'
-import { DomainLike, PropertyLike, RelationLike } from 'main/domain/like/all'
-import { ClassLike } from 'main/domain/like/class'
-import { LeafPropertyLike } from 'main/domain/like/leaf-property'
+import { ContentLike } from '../domain/like/content'
+import { GraphMergerImpl } from './common/graph-merger'
+import { DIRTY_STATE_NONE, DirtyState, mergeDirtyState } from './common/dirty-state'
+import { Integer, Optional, Pixel, Point } from '../domain/base'
+import { DomainLike, PropertyLike, RelationLike } from '../domain/like/all'
+import { ClassLike } from '../domain/like/class'
+import { LeafPropertyLike } from '../domain/like/leaf-property'
 import {
   compositeModificationAppliers,
   GraphItem,
   GraphMergerSession,
   MergeResult,
   ModificationAppliers,
-} from 'main/graph/common/graph-definition'
-import { isDefine } from 'main/core/utils'
+} from './common/graph-definition'
+import { isDefine } from '../core/utils'
 import {
   ClassView,
   DomainGraphItem,
@@ -43,14 +43,14 @@ import {
   VIEW_TYPE_PROPERTY_TO_CLASS_RELATION,
   ViewMeta,
   VirtualRelation,
-} from 'main/graph/view-definition'
+} from './view-definition'
 import {
   LIKE_TYPE_CLASS,
   LIKE_TYPE_INCLUDE_PROPERTIES_GROUP_RELATION,
   LIKE_TYPE_LEAF_PROPERTY,
   LIKE_TYPE_PROPERTY_GROUP,
   LIKE_TYPE_PROPERTY_TO_CLASS_RELATION,
-} from 'main/domain/like/type'
+} from '../domain/like/type'
 import {
   EdgePath,
   EdgeViewModificationAppliers,
@@ -58,7 +58,7 @@ import {
   LabelViewModificationAppliers,
   NodeViewModificationAppliers,
   PortViewModificationAppliers,
-} from 'main/graph/common/layout-graph-definition'
+} from './common/layout-graph-definition'
 import {
   classLabelCropApplierFactory,
   classLabelDirtyStatusApplierFactory,
@@ -67,25 +67,25 @@ import {
   classNodeSizeApplierFactory,
   classPortDirtyStatusApplierFactory,
   classPortSizeAndLocationApplierFactory,
-} from 'main/graph/class-appliers'
-import { UpdateDirtyState } from 'main/graph/appliers-common'
+} from './class-appliers'
+import { UpdateDirtyState } from './appliers-common'
 import {
   leafPropertyLabelCropApplierFactory,
   leafPropertyLabelDirtyStatusApplierFactory,
   leafPropertyLabelSizeAndLocationApplierFactory,
   leafPropertyPortDirtyStatusApplierFactory,
   leafPropertyPortSizeAndLocationApplierFactory,
-} from 'main/graph/leaf-property-appliers'
+} from './leaf-property-appliers'
 import {
   propertiesGroupLabelCropApplierFactory,
   propertiesGroupLabelDirtyStatusApplierFactory,
   propertiesGroupLabelSizeAndPositionApplierFactory,
   propertiesGroupPortDirtyStatusApplierFactory,
   propertiesGroupPortSizeAndLocationApplierFactory,
-} from 'main/graph/properties-group-appliers'
-import { includePropertiesEdgeDirtyStatusApplierFactory } from 'main/graph/include-reference-appliers'
-import { propertyReferenceEdgeDirtyStatusApplierFactory } from 'main/graph/property-reference-appliers'
-import { PropertiesGroupLike } from 'main/domain/like/properties-group'
+} from './properties-group-appliers'
+import { includePropertiesEdgeDirtyStatusApplierFactory } from './include-reference-appliers'
+import { propertyReferenceEdgeDirtyStatusApplierFactory } from './property-reference-appliers'
+import { PropertiesGroupLike } from '../domain/like/properties-group'
 import {
   DEFAULT_CLASS_HEADER_HEIGHT,
   DEFAULT_CLASS_MARGIN_BOTTOM,
@@ -99,11 +99,11 @@ import {
   DEFAULT_PROPERTIES_GROUP_SPLITTER_PADDING_TOP,
   DEFAULT_PROPERTIES_GROUP_TITLE_HEIGHT,
   DEFAULT_PROPERTIES_GROUP_TITLE_TO_CHILDREN_SEPARATOR_LENGTH,
-} from 'main/defaults'
-import { PropertyToClassRelationLike } from 'main/domain/like/property-to-class-reference-relation'
-import { IncludePropertiesGroupRelationLike } from 'main/domain/like/include-properties-group-relation'
-import { TextService } from 'main/graph/common/text-service'
-import { ListMultimap } from 'main/core/list-multimap'
+} from '../defaults'
+import { PropertyToClassRelationLike } from '../domain/like/property-to-class-reference-relation'
+import { IncludePropertiesGroupRelationLike } from '../domain/like/include-properties-group-relation'
+import { TextService } from './common/text-service'
+import { ListMultimap } from '../core/list-multimap'
 
 export function resolveGraphItems<Meta extends ViewMeta>(br: BuildResult<Meta>, domainLikes: DomainLike[]): DomainGraphItem<Meta>[] {
   return domainLikes.flatMap(like => br.resolveGraphItem(like))

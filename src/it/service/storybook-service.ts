@@ -20,7 +20,7 @@ import { host } from './storybook-functions'
 import { StoryPage } from './story-page'
 import { EventEmitter } from 'events'
 import { EVENT_NAME_UPDATE_FINISH } from './storybook-constant'
-import { EVENT_UPDATE_FINISH } from 'main/component'
+import { EVENT_UPDATE_FINISH } from '../../main/component'
 
 const REPUB_EVENT_UPDATE_FINISH: typeof EVENT_UPDATE_FINISH = 'update-finish'
 

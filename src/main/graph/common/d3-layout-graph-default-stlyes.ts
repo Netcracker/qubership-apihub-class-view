@@ -21,11 +21,11 @@ import {
   LocatableLabel,
   LocatableNode,
   LocatablePort,
-} from 'main/graph/common/layout-graph-definition'
+} from './layout-graph-definition'
 import { roundCommands } from 'svg-round-corners'
-import { DEFAULT_EDGE_SMOOTH_RADIUS } from 'main/defaults'
+import { DEFAULT_EDGE_SMOOTH_RADIUS } from '../../defaults'
 import { Selection } from 'd3'
-import { D3DatumRenderer } from 'main/graph/common/d3-layout-graph-component-definitions'
+import { D3DatumRenderer } from './d3-layout-graph-component-definitions'
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export const DEFAULT_RENDERER: Required<D3DatumRenderer<LayoutGraphMeta, any/*unknown actually*/>> = {

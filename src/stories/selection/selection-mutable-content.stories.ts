@@ -15,9 +15,9 @@
  */
 
 import { Meta, StoryFn } from '@storybook/html'
-import { generateContentByPrefix, storyArgsFunc } from 'stories/common'
-import { HasProperties } from 'main/domain/object/base'
-import { DefaultDomainMeta, LeafPropertyObject, PropertiesGroupObject, PropertyObject } from 'main/domain'
+import { generateContentByPrefix, storyArgsFunc } from '../common'
+import { HasProperties } from '../../main/domain/object/base'
+import { DefaultDomainMeta, LeafPropertyObject, PropertiesGroupObject, PropertyObject } from '../../main/domain'
 
 enum ChangeContentStage {
   NO_CHANGES,

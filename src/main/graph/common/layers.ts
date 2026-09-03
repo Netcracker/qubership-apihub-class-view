@@ -15,7 +15,7 @@
  */
 
 import { Local, local, select, Selection, ZoomTransform } from 'd3'
-import { HasGraphItemKey, LayoutGraphMeta } from 'main/graph/common/layout-graph-definition'
+import { HasGraphItemKey, LayoutGraphMeta } from './layout-graph-definition'
 
 import {
   D3DatumRenderer,
@@ -24,8 +24,8 @@ import {
   LayerKey,
   RendererContext,
   RequiredD3DatumRendererFactory,
-} from 'main/graph/common/d3-layout-graph-component-definitions'
-import { DEFAULT_RENDERER } from 'main/graph/common/d3-layout-graph-default-stlyes'
+} from './d3-layout-graph-component-definitions'
+import { DEFAULT_RENDERER } from './d3-layout-graph-default-stlyes'
 
 export const ATTR_ID = 'data-id'
 export const ATTR_LAYER = 'data-layer'

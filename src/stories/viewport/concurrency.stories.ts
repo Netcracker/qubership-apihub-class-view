@@ -21,9 +21,9 @@ import {
   generatePropertiesGroupObject,
   storyArgsFunc,
   StoryContext,
-} from 'stories/common'
-import { DefaultDomainMeta, Optional } from 'main/domain'
-import { isDefine } from 'main/core/utils'
+} from '../common'
+import { DefaultDomainMeta, Optional } from '../../main/domain'
+import { isDefine } from '../../main/core/utils'
 
 export default {
   title: 'Synthetic/Viewport',

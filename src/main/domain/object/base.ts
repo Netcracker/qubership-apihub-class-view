@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import { Key, OneLineText, Optional } from 'main/domain/base'
-import { ClassObject } from 'main/domain/object/class'
-import { LeafPropertyObject } from 'main/domain/object/leaf-property'
-import { PropertiesGroupObject } from 'main/domain/object/properties-group'
-import { Shape } from 'main/domain/object/shape'
+import { Key, OneLineText, Optional } from '../base'
+import { ClassObject } from './class'
+import { LeafPropertyObject } from './leaf-property'
+import { PropertiesGroupObject } from './properties-group'
+import { Shape } from './shape'
 
 export interface HasIdentity {
   readonly key?: Key;

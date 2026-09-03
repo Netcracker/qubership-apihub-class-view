@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { isDefine } from 'main/core/utils'
+import { isDefine } from './utils'
 
 export class ListMultimap<K, V> {
   private readonly _map: Map<K, V[]>
