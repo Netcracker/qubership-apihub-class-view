@@ -1,0 +1,1 @@
+import{c as t,T as n}from"./common-e3a3d590.js";import"./iframe-8cbae745.js";import"../sb-preview/runtime.js";import"./_commonjsHelpers-de833af9.js";import"./preview-errors-dde4324f.js";import"./index-356e4a49.js";const c={title:"Synthetic/Content"},o=t({}),e=n.bind({});e.args={content:o};const C=["EmptyContent"];export{e as EmptyContent,C as __namedExportsOrder,c as default};
