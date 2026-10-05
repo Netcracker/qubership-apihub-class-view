@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { ClassLike } from './class'
-import { RelationLike } from './all'
+import { ClassLike } from 'main/domain/like/class'
+import { RelationLike } from 'main/domain/like/all'
 
 export interface ContentLike {
   readonly classes: ClassLike[];

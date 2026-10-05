@@ -27,7 +27,7 @@ import {
   PROPERTIES_GROUP_SUFFIX,
   range,
   Template
-} from '../common'
+} from 'stories/common'
 
 export default {
   title: 'Synthetic/Layout',

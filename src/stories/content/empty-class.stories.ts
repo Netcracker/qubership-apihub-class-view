@@ -15,7 +15,7 @@
  */
 
 import { Meta } from '@storybook/html'
-import { CLASS_SUFFIX, generateClassObject, generateContent, Template } from '../common'
+import { CLASS_SUFFIX, generateClassObject, generateContent, Template } from 'stories/common'
 
 export default {
   title: 'Synthetic/Content',

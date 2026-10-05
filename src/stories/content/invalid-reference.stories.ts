@@ -26,7 +26,7 @@ import {
   LEAF_PROPERTY_SUFFIX,
   PROPERTIES_GROUP_SUFFIX,
   Template
-} from '../common'
+} from 'stories/common'
 
 export default {
   title: 'Synthetic/Content',

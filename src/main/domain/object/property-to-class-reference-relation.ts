@@ -20,7 +20,7 @@ import {
   HasReferenceFromPropertyToClass,
   HasReferenceKind,
   RELATION_TYPE_PROPERTY_TO_CLASS_REFERENCE,
-} from './base'
+} from 'main/domain/object/base'
 
 export interface PropertyToClassRelationObject extends HasIdentity, HasReferenceKind, HasPrimary, HasReferenceFromPropertyToClass {
   readonly kind: typeof RELATION_TYPE_PROPERTY_TO_CLASS_REFERENCE;

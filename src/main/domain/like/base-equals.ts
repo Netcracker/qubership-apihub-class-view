@@ -25,7 +25,7 @@ import {
   HasReferenceFromPropertyToClassLike,
   HasRequiredLike,
   HasShapeLike,
-} from './base'
+} from 'main/domain/like/base'
 
 export function equalsByIdentity(first: HasIdentityLike, second: HasIdentityLike): boolean {
   return first.key === second.key

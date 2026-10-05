@@ -24,7 +24,7 @@ import {
   LEAF_PROPERTY_SUFFIX,
   PROPERTIES_GROUP_SUFFIX,
   storyArgsFunc,
-} from '../common'
+} from 'stories/common'
 
 enum NameStage {
   EMPTY,

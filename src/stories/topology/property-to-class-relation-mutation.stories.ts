@@ -24,7 +24,7 @@ import {
   LEAF_PROPERTY_SUFFIX,
   range,
   storyArgsFunc
-} from '../common'
+} from 'stories/common'
 
 export default {
   title: 'Synthetic/Topology',

@@ -30,7 +30,18 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "assets/*": [
+        "./src/assets/*"
+      ],
+      "main/*": [
+        "./src/main/*"
+      ],
+      "stories/*": [
+        "./src/stories/*"
+      ]
+    }
   },
   "include": [
     "src"

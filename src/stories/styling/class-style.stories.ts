@@ -15,8 +15,8 @@
  */
 
 import { Meta, StoryFn } from '@storybook/html'
-import { SHAPE_RECTANGLE, SHAPE_ROUND_RECTANGLE } from '../../main/domain'
-import { CLASS_SUFFIX, generateClassObject, generateContent, storyArgsFunc } from '../common'
+import { SHAPE_RECTANGLE, SHAPE_ROUND_RECTANGLE } from 'main/domain'
+import { CLASS_SUFFIX, generateClassObject, generateContent, storyArgsFunc } from 'stories/common'
 
 enum ShapeStage {
   RECTANGLE,
